@@ -63,6 +63,7 @@ body {
   font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-image: url(http://images.cnblogs.com/cnblogs_com/csophys/368957/r_bg.gif); /*by leslie*/
 }
 
 h1, h2, h3, h4, h5, h6 {
