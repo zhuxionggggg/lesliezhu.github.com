@@ -39,6 +39,7 @@ ol, ul {
   list-style: none;
 }
 
+
 blockquote, q {
 }
 
@@ -63,7 +64,7 @@ body {
   font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-image: url(http://tp1.sinaimg.cn/1894693492/180/40022694449/1);
+  /*background-image: url(http://tp1.sinaimg.cn/1894693492/180/40022694449/1);*/
 /*
   background-attachment: fixed;
   background-position: right bottom;
@@ -210,14 +211,26 @@ ul, ol, dl {
   margin-bottom: 15px
 }
 
+.wkg li{
+  list-style: inside;    
+  padding-left: 40px;
+  margin-bottom: 15px;
+  width:60px;
+  floag:left;
+  display:inline;
+  font-size:20px;
+  font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+}
 ul li {
   list-style: inside;
   padding-left: 20px;
+
 }
 
 ol li {
   list-style: decimal inside;
   padding-left: 20px;
+}
 }
 
 dl dt {
