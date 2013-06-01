@@ -185,9 +185,9 @@ pre, code {
 
 pre { 
     font-family: Monaco, Consolas, "Lucida Console", monospace; 
-    color: white; 
+    color: #00FF00; 
     background-color: #FFFFCC; 
-    padding: 1.2em; 
+    padding: 10px; 
     border: 1px solid gray; 
     overflow: auto; 
     box-shadow: 0px 0px 4px rgba(0,0,0,0.23); 
