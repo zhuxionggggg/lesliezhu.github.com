@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-lang="zh-CN" xml:lang="zh-CN">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
 <head>
 <title>EMACS</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="EMACS"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-06-01 00:11:11 CST"/>
+<meta name="generated" content="2013-06-01 17:22:31 CST"/>
 <meta name="author" content="Leslie"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -21,6 +21,9 @@ lang="zh-CN" xml:lang="zh-CN">
   .target { }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
   p.verse { margin-left: 3% }
   pre {
 	border: 1pt solid #AEBDCC;
@@ -31,10 +34,23 @@ lang="zh-CN" xml:lang="zh-CN">
         overflow:auto;
   }
   table { border-collapse: collapse; }
-  td, th { vertical-align: top; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
   dt { font-weight: bold; }
   div.figure { padding: 0.5em; }
   div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
   .linenr { font-size:smaller }
   .code-highlighted {background-color:#ffff00;}
   .org-info-js_info-navigation { border-style:none; }
@@ -82,15 +98,20 @@ org_html_manager.setup();  // activate after the parameters are set
  }
 /*]]>*///-->
 </script>
+
 </head>
 <body>
-<div id="content">
 <div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
  <a accesskey="h" href="http://lesliezhu.github.com"> UP </a>
  |
  <a accesskey="H" href="http://lesliezhu.github.com"> HOME </a>
 </div>
 
+<div id="preamble">
+
+</div>
+
+<div id="content">
 <h1 class="title">EMACS</h1>
 
 
@@ -107,31 +128,244 @@ org_html_manager.setup();  // activate after the parameters are set
 <h2>目录</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 前言 </a></li>
+<li><a href="#sec-1">1 EMACS基本配置</a>
+<ul>
+<li><a href="#sec-1-1">1.1 配置文件: .emacs.el</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 Org-mode</a>
+<ul>
+<li><a href="#sec-2-1">2.1 中文乱码问题</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> 前言 </h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> EMACS基本配置</h2>
 <div class="outline-text-2" id="text-1">
 
 
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 配置文件: .emacs.el</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
 <p>
-这是一个模板。
+  用一段，学一段，记一段！
 </p>
 
 
 
+<pre class="example"> ;; Emacs config of Leslie
+;; pythonisland@gmail.com
+
+;; 基本设置
+(setq default-major-mode 'python-mode) ;; 设置默认模式
+(setq default-line-spaceing 4)         ;; line-space
+(setq default-fill-column 60)          ;; page width
+(setq kill-ring-max 800)               ;;kill欢长度，越大则保存历史命令越多 
+(setq visible-bell 1)                  ;; 
+(setq resize-mini-windows nil)         ;; lock line hight
+(setq enable-recursive-minibuffers t)  ;; minibuffer
+(setq hs-allow-nesting t)
+
+
+;; 设置时间显示
+(display-time-mode 1)
+(setq display-time-24hr-format t)
+(setq display-time-day-and-date t)
+
+(setq require-final-newline t)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
+
+;; 默认激活某些模式
+(transient-mark-mode t)   ;; 语法高亮
+(global-font-lock-mode 1) ; for all buffers
+(global-font-lock-mode 1) ;; 锁定字体
+
+;; 添加加载目录
+(add-to-list 'load-path "~/.emacs.d/modes")
+
+;; 设置某个模式使用某个.el文件
+(autoload 'markdown-mode "markdown-mode.el"
+  "Major mode for editing Markdown files" t)
+(autoload 'tsconf-mode "tsconf-mode.el" 
+  "Major mode for editing timeseries.ini file" t)
+
+
+;; 设置后缀名自动识别模式
+(setq auto-mode-alist
+    (cons '("\\.md" . markdown-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.ini" . tsconf-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.tks" . java-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist
+             '("\\.org\\'" . org-mode))
+
+;; 绑定键
+(global-set-key "\C-xl" 'goto-line)     ;; 设置C-x l是跳至某一行
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+;; set-buffer-file-eol-type
+(global-set-key "\^Cu" (lambda () (interactive) (set-buffer-file-eol-type 'unix)))
+(global-set-key "\^Cd" (lambda () (interactive) (set-buffer-file-eol-type 'dos)))
+(global-set-key "\^Cm" (lambda () (interactive) (set-buffer-file-eol-type 'mac)))
+
+;; Make the mode-line display the standard EOL-TYPE symbols (used above)...
+(setq eol-mnemonic-undecided "(?)" ;; unknown EOL type
+      eol-mnemonic-unix  "(unix)"  ;; LF
+      eol-mnemonic-dos  "(dos)"    ;; CRLF
+      eol-mnemonic-mac  "(mac)")   ;; CR
+
+;; indent-according-to-mode
+
+;; 增加hook
+(add-hook 'org-mode-hook 'turn-on-font-lock)  ; Org buffers only
+
+(defun my-hs-minor-mode-map-setup ()
+  "为hs-minor-mode设置自己的绑定键"
+  (define-key hs-minor-mode-map [?\C-c ?h] 'hs-hide-block)    ; C-c h
+  (define-key hs-minor-mode-map [?\C-c ?s] 'hs-show-block)    ; C-c s
+  (define-key hs-minor-mode-map [?\C-c ?\M-h] 'hs-hide-all)   ; C-c M-h
+  (define-key hs-minor-mode-map [?\C-c ?\M-s] 'hs-show-all)   ; C-c M-s
+  (define-key hs-minor-mode-map [?\C-c ?H] 'hs-hide-all)      ; C-c H
+  (define-key hs-minor-mode-map [?\C-c ?S] 'hs-show-all)      ; C-c S
+  (define-key hs-minor-mode-map [?\C-c ?l] 'hs-hide-level)    ; C-c l
+  (define-key hs-minor-mode-map [?\C-c ?t] 'hs-toggle-hiding) ; C-c t
+  )
+
+;; 关联hs-minor模式
+(add-hook 'hs-minor-mode-hook 'my-hs-minor-mode-map-setup t)
+
+;; 将hs-minor模式与其它主要模式关联起来
+(add-hook 'c-mode-hook 'hs-minor-mode)
+(add-hook 'c++-mode-hook 'hs-minor-mode)
+(add-hook 'java-mode-hook 'hs-minor-mode)
+
+
+;;;;; 设置tab为4个空格的宽度 
+(setq-default c-basic-offset 4)
+(setq-default indent-tabs-mode nil) 
+(setq c-basic-offset 4) 
+(setq indent-tabs-mode nil) 
+(setq default-tab-width 4) 
+(setq tab-width 4) 
+(setq tab-stop-list ()) 
+(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96))
+
+;;; for common lisp env
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(setq inferior-lisp-program "/usr/bin/sbcl --noinform");; Replace "sbcl" with the path to your implementation
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(org-blank-before-new-entry (quote ((heading) (plain-list-item))))
+ '(org-export-language-setup (quote (("en" "Author" "Date" "Table of Contents" "Footnotes") 
+                                     ("ca" "Autor" "Data" "&amp;Iacute;ndex" "Peus de p&amp;agrave;gina") 
+                                     ("cs" "Autor" "Datum" "Obsah" "Pozn\341mky pod carou") 
+                                     ("da" "Ophavsmand" "Dato" "Indhold" "Fodnoter") 
+                                     ("de" "Autor" "Datum" "Inhaltsverzeichnis" "Fu&amp;szlig;noten") 
+                                     ("eo" "A&amp;#365;toro" "Dato" "Enhavo" "Piednotoj") 
+                                     ("es" "Autor" "Fecha" "&amp;Iacute;ndice" "Pies de p&amp;aacute;gina") 
+                                     ("fi" "Tekij&amp;auml;" "P&amp;auml;iv&amp;auml;m&amp;auml;&amp;auml;r&amp;auml;" "Sis&amp;auml;llysluettelo" "Alaviitteet")
+                                     ("fr" "Auteur" "Date" "Table des mati&amp;egrave;res" "Notes de bas de page") 
+                                     ("hu" "Szerz&amp;otilde;" "D&amp;aacute;tum" "Tartalomjegyz&amp;eacute;k" "L&amp;aacute;bjegyzet") 
+                                     ("is" "H&amp;ouml;fundur" "Dagsetning" "Efnisyfirlit" "Aftanm&amp;aacute;lsgreinar") 
+                                     ("it" "Autore" "Data" "Indice" "Note a pi&amp;egrave; di pagina") 
+                                     ("nl" "Auteur" "Datum" "Inhoudsopgave" "Voetnoten") 
+                                     ("no" "Forfatter" "Dato" "Innhold" "Fotnoter") 
+                                     ("nb" "Forfatter" "Dato" "Innhold" "Fotnoter") 
+                                     ("nn" "Forfattar" "Dato" "Innhald" "Fotnotar") 
+                                     ("pl" "Autor" "Data" "Spis tre&amp;sacute;ci" "Przypis") 
+                                     ("sv" "F&amp;ouml;rfattare" "Datum" "Inneh&amp;aring;ll" "Fotnoter") 
+                                     ("zh-CN" "作者" "日期" "目录" "脚注")))))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+
+;;(setq org-export-language-setup       (append org-export-language-setup               '(("zh-CN" "作者" "日期" "目录" "脚注"))))
+;;(setq org-export-default-language "zh-CN")
+(setq org-export-htmlize-output-type 'inline-css)
+(require 'htmlize-hack)
+;;(require 'org-html)
+</pre>
+
+
+
+
 </div>
 </div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Org-mode</h2>
+<div class="outline-text-2" id="text-2">
+
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> 中文乱码问题</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+<dl>
+<dt>现象</dt><dd>
+
+<p>     
+     使用org-mode撰写文档，导出为HTML格式时，出现乱码现象，这是org-html.el文件中默认是iso-8859-1字符集的原因；只需要修改为utf-8
+</p></dd>
+</dl>
+
+<p>   即可。
+</p>
+<dl>
+<dt>步骤</dt><dd>
+
+<p>
+     发现该文件是/usr/share/emacs/23.3/lisp/org/org-html.elc，于是下载一个emacs-24.2版本源码进行编译安装，安装后是/usr/local/bin/
+</p></dd>
+</dl>
+
+<p>   emacs, 将源码复制到/usr/share/emacs/emacs-24.2/。 修改/usr/share/emacs/emacs-24.2/lisp/org/org-html.el文件，并在~/.bashrc中设置：
+</p>
+
+
+<pre class="example">alias emacs='/usr/local/bin/emacs -nw'
+</pre>
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
 <div id="postamble">
-<p class="author"> 作者: Leslie
-<a href="mailto:pythonisland@gmail.com">&lt;pythonisland@gmail.com&gt;</a>
-</p>
-<p class="date"> 日期: 2013-06-01 00:11:11 CST</p>
-<p class="creator">HTML generated by org-mode 6.33x in emacs 23</p>
-</div>
+<p class="date">日期: 2013-06-01 17:22:31 CST</p>
+<p class="author">作者: Leslie</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
 </div>
 </body>
 </html>

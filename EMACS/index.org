@@ -30,10 +30,13 @@
 
 #+TITLE: EMACS
 
-* 前言
+* EMACS基本配置
 
-  这是一个模板。
+#+include: "./config.org"
 
+* Org-mode
+
+#+include: "./org-mode.org"
 
 
 
