@@ -183,7 +183,17 @@ pre, code {
 
 }
 
-pre {
+pre { 
+    font-family: Monaco, Consolas, "Lucida Console", monospace; 
+    color: white; 
+    background-color: black; 
+    padding: 1.2em; 
+    border: 1px solid gray; 
+    overflow: auto; 
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.23); 
+} 
+
+old pre {
   width: 100%;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,.1);
