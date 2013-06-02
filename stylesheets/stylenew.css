@@ -183,7 +183,7 @@ pre, code {
 
 }
 
-pre { 
+new pre { 
     font-family: Monaco, Consolas, "Lucida Console", monospace; 
     color: #00FF00; 
     background-color: #FFFFCC; 
@@ -194,8 +194,11 @@ pre {
 } 
 
 old pre {
-  width: 100%;
+  width: auto;                  /*100%*/
   padding: 10px;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  font-size: 100%;
+  background-color: rgb(233, 220, 178);
   box-shadow: 0 0 10px rgba(0,0,0,.1);
   overflow: auto;
 }
@@ -222,6 +225,13 @@ ul, ol, dl {
   margin-bottom: 15px
 }
 
+/* add by leslie */
+
+b {
+    font-weight: bold;
+    font-size: 20px;
+    color: #ee4000;
+}
 .wkg li{
   list-style: inside;    
   padding-left: 40px;
@@ -246,6 +256,8 @@ ol li {
 
 dl dt {
   font-weight: bold;
+  font-size:20px;
+  colort: #ee4000
 }
 
 dl dd {
