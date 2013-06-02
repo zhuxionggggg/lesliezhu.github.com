@@ -72,14 +72,34 @@ body {
   background-repeat: no-repeat;
 */
   /*background-color: white;*/
+
+  padding-left: 12%;
+  padding-right: 10%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    /* 
   margin: 10px 0;
   font-weight: 700;
   color:#222222;
   font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
   letter-spacing: -1px;
+  */
+/* new */
+    font-family: DejaVu Sans, Arial, SimHei, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    background: #bbccdd;
+    //border-top: 1px solid royalblue;
+    //padding: 10px;
+    //padding-left: 30px;
+    //margin-left: -10px;
+    //margin-top: 0px;
+    //margin-bottom: 0px;
 }
 
 h1 {
