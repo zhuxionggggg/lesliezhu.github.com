@@ -22,7 +22,7 @@
 #+LINK_UP: http://lesliezhu.github.com/Notes/index.html
 #+LINK_HOME: http://lesliezhu.github.com
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="./stylesheets/stylenew.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="../stylesheets/stylenew.css" />
 #+LANGUAGE: zh-CN
 
 #+AUTHOR: Leslie
