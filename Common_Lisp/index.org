@@ -18,7 +18,7 @@
 #+INFOJS_OPT: view:info toc:1
 
 
-#+LINK_UP: http://lesliezhu.github.com
+#+LINK_UP: http://lesliezhu.github.com/Common_Lisp/index.html
 #+LINK_HOME: http://lesliezhu.github.com
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/stylenew.css" />

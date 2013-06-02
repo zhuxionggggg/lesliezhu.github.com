@@ -18,7 +18,7 @@
 #+INFOJS_OPT: view:info toc:1
 
 
-#+LINK_UP: http://lesliezhu.github.com
+#+LINK_UP: http://lesliezhu.github.com/GNU_Linux/index.html
 #+LINK_HOME: http://lesliezhu.github.com
 
 #+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/stylenew.css" />
@@ -35,5 +35,10 @@
   这是一个模板。
 
 
-
+#+begin_src bash -n
+echo Hello
+for i in {23..40};do
+echo $i;
+done
+#+end_src
 

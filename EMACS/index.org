@@ -18,10 +18,10 @@
 #+INFOJS_OPT: view:info toc:1
 
 
-#+LINK_UP: http://lesliezhu.github.com
+#+LINK_UP: http://lesliezhu.github.com/EMACS.html
 #+LINK_HOME: http://lesliezhu.github.com
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/stylenew.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="../stylesheets/stylenew.css" />
 #+LANGUAGE: zh-CN
 
 #+AUTHOR: Leslie
@@ -37,6 +37,14 @@
 * Org-mode
 
 #+include: "./org-mode.org"
+
+#+begin_html
+<script src="https://gist.github.com/LeslieZhu/4466222.js"></script>
+#+end_html
+
+#+begin_src python -n -r
+import os,time
+#+end_src
 
 
 
