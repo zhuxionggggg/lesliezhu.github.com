@@ -14,25 +14,27 @@
 #+OPTIONS: LaTeX:verbatim  
 
 #+OPTIONS: H:8
-#+OPTIONS: toc:3
+#+OPTIONS: toc:2
+#+OPTIONS: num:nil
 #+INFOJS_OPT: view:info toc:1
 
 
-#+LINK_UP: http://lesliezhu.github.com
+#+LINK_UP: http://lesliezhu.github.com/Notes/index.html
 #+LINK_HOME: http://lesliezhu.github.com
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/stylenew.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="./stylesheets/stylenew.css" />
 #+LANGUAGE: zh-CN
 
 #+AUTHOR: Leslie
 #+EMAIL: pythonisland@gmail.com
 
 
-#+TITLE: Essays
+#+TITLE: Notes
 
-* 前言
+* Jun 2013
 
-  这是一个模板。
+#+include: "./20130602.org"
+
 
 
 
