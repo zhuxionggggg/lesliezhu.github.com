@@ -32,7 +32,7 @@
 #+TITLE: Notes
 
 * Jun 2013
-#+include: "./20130602.org"
+#+include: "./20130602.org"  ##时光
 
 
 
