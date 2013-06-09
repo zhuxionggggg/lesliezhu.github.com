@@ -3,32 +3,17 @@
 #+STARTUP: showall
 #+STARTUP: showeverything
 #+STARTUP: indent
-
-##+STARTUP: hideblocks
 #+STARTUP: nohideblocks
-
-##+STARTUP: align
-##+STARTUP: noalign
-
-
-
 #+OPTIONS: ^:{}
-
 #+OPTIONS: LaTeX:t         
 #+OPTIONS: LaTeX:dvipng    
 #+OPTIONS: LaTeX:nil       
 #+OPTIONS: LaTeX:verbatim  
-
 #+OPTIONS: H:8
 #+OPTIONS: toc:3
 #+INFOJS_OPT: view:info toc:1
-
-
 #+LINK_UP: http://lesliezhu.github.com/EMACS/index.html
 #+LINK_HOME: http://lesliezhu.github.com
-
-
-
 #+STYLE: <link rel="stylesheet" type="text/css" href="../stylesheets/stylenew.css" />
 #+LANGUAGE: zh-CN
 
@@ -39,19 +24,13 @@
 #+TITLE: EMACS
 
 
-* EMACS基本配置
+* [[./config.html][EMACS基本配置]]
+* [[org-mode.html][Org-mode]]
 
-
-
-#+include: "./config.org"
 
 #+begin_html
 <!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread" 
-data-thread-key="<?php echo $this->cid;?>"
-data-title="<?php echo $this->title;?>"
-data-author-key="<?php echo $this->authorId;?>"
-data-url=""></div>
+<div class="ds-thread"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"lesliezhu"};
 (function() {
@@ -66,29 +45,3 @@ ds.charset = 'UTF-8';
 <!-- Duoshuo Comment END -->
 #+end_html
 
-* Org-mode
-
-#+include: "./org-mode.org" 
-
-
-
-#+begin_html
-<!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread">
-data-thread-key="<?php echo $this->cid;?>"
-data-title="<?php echo $this->title;?>"
-data-author-key="<?php echo $this->authorId;?>"
-data-url=""></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"lesliezhu"};
-(function() {
-var ds = document.createElement('script');
-ds.type = 'text/javascript';ds.async = true;
-ds.src = 'http://static.duoshuo.com/embed.js';
-ds.charset = 'UTF-8';
-(document.getElementsByTagName('head')[0] 
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- Duoshuo Comment END -->
-#+end_html

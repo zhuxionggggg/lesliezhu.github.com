@@ -1,3 +1,28 @@
+#+STARTUP: overview
+#+STARTUP: content
+#+STARTUP: showall
+#+STARTUP: showeverything
+#+STARTUP: indent
+#+STARTUP: nohideblocks
+#+OPTIONS: ^:{}
+#+OPTIONS: LaTeX:t         
+#+OPTIONS: LaTeX:dvipng    
+#+OPTIONS: LaTeX:nil       
+#+OPTIONS: LaTeX:verbatim  
+#+OPTIONS: H:8
+#+OPTIONS: toc:3
+#+LINK_UP: http://lesliezhu.github.com/EMACS/index.html
+#+LINK_HOME: http://lesliezhu.github.com
+#+STYLE: <link rel="stylesheet" type="text/css" href="../stylesheets/stylenew.css" />
+#+LANGUAGE: zh-CN
+
+#+AUTHOR: Leslie
+#+EMAIL: pythonisland@gmail.com
+
+
+#+TITLE: Org-Mode
+
+
 ** 简介
    自从开始org-mode写文档以来，我就爱上了写文档，这里是对org-mode的info文档翻译，也是一个笔记。
 ** 文档结构
@@ -22,3 +47,19 @@
    #+end_src
     
 
+#+begin_html
+<!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lesliezhu"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';ds.async = true;
+ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+#+end_html
