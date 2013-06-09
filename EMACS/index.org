@@ -45,25 +45,40 @@
 
 #+include: "./config.org"
 
+#+begin_html
+<!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lesliezhu"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';ds.async = true;
+ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+#+end_html
+
 * Org-mode
 
 #+include: "./org-mode.org" 
 
 
-##添加多说评论功能
+
 #+begin_html
-
-
 <!-- Duoshuo Comment BEGIN -->
-	<div class="ds-thread"></div>
+<div class="ds-thread"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"lesliezhu"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = 'http://static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';ds.async = true;
+ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] 
 		|| document.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
 	</script>
