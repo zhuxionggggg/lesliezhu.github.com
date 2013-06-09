@@ -3,11 +3,8 @@
 #+STARTUP: showall
 #+STARTUP: showeverything
 #+STARTUP: indent
-
-#+STARTUP: hideblocks
 #+STARTUP: nohideblocks
 #+OPTIONS: ^:{}
-
 #+OPTIONS: LaTeX:t         
 #+OPTIONS: LaTeX:dvipng    
 #+OPTIONS: LaTeX:nil       
@@ -16,8 +13,7 @@
 #+OPTIONS: H:8
 #+OPTIONS: toc:2
 #+OPTIONS: num:nil
-#+INFOJS_OPT: view:info toc:1
-
+#+INFOJS_OPT: view:info toc:2
 
 #+LINK_UP: http://lesliezhu.github.com/Notes/index.html
 #+LINK_HOME: http://lesliezhu.github.com
@@ -31,8 +27,12 @@
 
 #+TITLE: Notes
 
+
+
+君子不可以不弘毅，任重而道远！——曾子
+
 * Jun 2013
-#+include: "./20130602.org"  ##时光
+#+include: "./201306/20130602-时光.org"
 
 
 
