@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="EMACS"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-06-09 03:37:54 PDT"/>
+<meta name="generated" content="2013-06-09 04:19:35 PDT"/>
 <meta name="author" content="Leslie"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -61,21 +61,6 @@
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="../stylesheets/stylenew.css" />
-<script type="text/javascript" src="http://orgmode.org/org-info.js"></script>
-<script type="text/javascript" >
-<!--/*--><![CDATA[/*><!--*/
-org_html_manager.set("TOC_DEPTH", "3");
-org_html_manager.set("LINK_HOME", "http://lesliezhu.github.com");
-org_html_manager.set("LINK_UP", "http://lesliezhu.github.com/EMACS/index.html");
-org_html_manager.set("LOCAL_TOC", "1");
-org_html_manager.set("VIEW_BUTTONS", "0");
-org_html_manager.set("MOUSE_HINT", "underline");
-org_html_manager.set("FIXED_TOC", "0");
-org_html_manager.set("TOC", "1");
-org_html_manager.set("VIEW", "info");
-org_html_manager.setup();  // activate after the parameters are set
-/*]]>*///-->
-</script>
 <script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
  function CodeHighlightOn(elem, id)
@@ -118,235 +103,19 @@ org_html_manager.setup();  // activate after the parameters are set
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="table-of-contents">
-<h2>目录</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1 EMACS基本配置</a>
-<ul>
-<li><a href="#sec-1-1">1.1 配置文件: .emacs.el</a></li>
-</ul>
+<ol>
+<li><a href="./config.html">EMACS基本配置</a>
 </li>
-<li><a href="#sec-2">2 Org-mode</a>
-<ul>
-<li><a href="#sec-2-1">2.1 简介</a></li>
-<li><a href="#sec-2-2">2.2 文档结构</a></li>
-<li><a href="#sec-2-3">2.3 中文乱码问题</a></li>
-</ul>
+<li><a href="./org-mode.html">Org-mode</a>
 </li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> EMACS基本配置</h2>
-<div class="outline-text-2" id="text-1">
-
-
-
-
-
-</div>
-
-<div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 配置文件: .emacs.el</h3>
-<div class="outline-text-3" id="text-1-1">
-
-
-<p>
-  用一段，学一段，记一段！
-</p>
-
-
-
-<pre class="src src-emacs-lisp"> <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">Emacs config of Leslie</span>
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">pythonisland@gmail.com</span>
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#22522;&#26412;&#35774;&#32622;</span>
-(setq default-major-mode 'python-mode) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#35774;&#32622;&#40664;&#35748;&#27169;&#24335;</span>
-(setq default-line-spaceing 4)         <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">line-space</span>
-(setq default-fill-column 60)          <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">page width</span>
-(setq kill-ring-max 800)               <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">kill&#27426;&#38271;&#24230;&#65292;&#36234;&#22823;&#21017;&#20445;&#23384;&#21382;&#21490;&#21629;&#20196;&#36234;&#22810; </span>
-(setq visible-bell 1)                  <span style="color: #ff0000;">;; </span>
-(setq resize-mini-windows nil)         <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">lock line hight</span>
-(setq enable-recursive-minibuffers t)  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">minibuffer</span>
-(setq hs-allow-nesting t)
-
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#35774;&#32622;&#26102;&#38388;&#26174;&#31034;</span>
-(display-time-mode 1)
-(setq display-time-24hr-format t)
-(setq display-time-day-and-date t)
-
-(setq require-final-newline t)
-
-(fset 'yes-or-no-p 'y-or-n-p)
-
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#40664;&#35748;&#28608;&#27963;&#26576;&#20123;&#27169;&#24335;</span>
-(transient-mark-mode t)   <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#35821;&#27861;&#39640;&#20142;</span>
-(global-font-lock-mode 1) <span style="color: #ff0000;">; </span><span style="color: #ff0000;">for all buffers</span>
-(global-font-lock-mode 1) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#38145;&#23450;&#23383;&#20307;</span>
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#28155;&#21152;&#21152;&#36733;&#30446;&#24405;</span>
-(add-to-list 'load-path <span style="color: #00ff00;">"~/.emacs.d/modes"</span>)
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#35774;&#32622;&#26576;&#20010;&#27169;&#24335;&#20351;&#29992;&#26576;&#20010;.el&#25991;&#20214;</span>
-(autoload 'markdown-mode <span style="color: #00ff00;">"markdown-mode.el"</span>
-  <span style="color: #00ff00;">"Major mode for editing Markdown files"</span> t)
-(autoload 'tsconf-mode <span style="color: #00ff00;">"tsconf-mode.el"</span> 
-  <span style="color: #00ff00;">"Major mode for editing timeseries.ini file"</span> t)
-
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#35774;&#32622;&#21518;&#32512;&#21517;&#33258;&#21160;&#35782;&#21035;&#27169;&#24335;</span>
-(setq auto-mode-alist
-    (cons '(<span style="color: #00ff00;">"\\.md"</span> . markdown-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '(<span style="color: #00ff00;">"\\.ini"</span> . tsconf-mode) auto-mode-alist))
-(setq auto-mode-alist
-      (cons '(<span style="color: #00ff00;">"\\.tks"</span> . java-mode) auto-mode-alist))
-(add-to-list 'auto-mode-alist
-             '(<span style="color: #00ff00;">"\\.org\\'"</span> . org-mode))
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#32465;&#23450;&#38190;</span>
-(global-set-key <span style="color: #00ff00;">"\C-xl"</span> 'goto-line)     <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#35774;&#32622;C-x l&#26159;&#36339;&#33267;&#26576;&#19968;&#34892;</span>
-(global-set-key <span style="color: #00ff00;">"\C-cl"</span> 'org-store-link)
-(global-set-key <span style="color: #00ff00;">"\C-ca"</span> 'org-agenda)
-(global-set-key <span style="color: #00ff00;">"\C-cb"</span> 'org-iswitchb)
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">set-buffer-file-eol-type</span>
-(global-set-key <span style="color: #00ff00;">"\^Cu"</span> (<span style="color: #00ffff; font-weight: bold;">lambda</span> () (interactive) (set-buffer-file-eol-type 'unix)))
-(global-set-key <span style="color: #00ff00;">"\^Cd"</span> (<span style="color: #00ffff; font-weight: bold;">lambda</span> () (interactive) (set-buffer-file-eol-type 'dos)))
-(global-set-key <span style="color: #00ff00;">"\^Cm"</span> (<span style="color: #00ffff; font-weight: bold;">lambda</span> () (interactive) (set-buffer-file-eol-type 'mac)))
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">Make the mode-line display the standard EOL-TYPE symbols (used above)...</span>
-(setq eol-mnemonic-undecided <span style="color: #00ff00;">"(?)"</span> <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">unknown EOL type</span>
-      eol-mnemonic-unix  <span style="color: #00ff00;">"(unix)"</span>  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">LF</span>
-      eol-mnemonic-dos  <span style="color: #00ff00;">"(dos)"</span>    <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">CRLF</span>
-      eol-mnemonic-mac  <span style="color: #00ff00;">"(mac)"</span>)   <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">CR</span>
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">indent-according-to-mode</span>
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#22686;&#21152;hook</span>
-(add-hook 'org-mode-hook 'turn-on-font-lock)  <span style="color: #ff0000;">; </span><span style="color: #ff0000;">Org buffers only</span>
-
-(<span style="color: #00ffff; font-weight: bold;">defun</span> <span style="color: #0000ff; font-weight: bold;">my-hs-minor-mode-map-setup</span> ()
-  <span style="color: #00ff00;">"&#20026;hs-minor-mode&#35774;&#32622;&#33258;&#24049;&#30340;&#32465;&#23450;&#38190;"</span>
-  (define-key hs-minor-mode-map [?\C-c ?h] 'hs-hide-block)    <span style="color: #ff0000;">; </span><span style="color: #ff0000;">C-c h</span>
-  (define-key hs-minor-mode-map [?\C-c ?s] 'hs-show-block)    <span style="color: #ff0000;">; </span><span style="color: #ff0000;">C-c s</span>
-  (define-key hs-minor-mode-map [?\C-c ?\M-h] 'hs-hide-all)   <span style="color: #ff0000;">; </span><span style="color: #ff0000;">C-c M-h</span>
-  (define-key hs-minor-mode-map [?\C-c ?\M-s] 'hs-show-all)   <span style="color: #ff0000;">; </span><span style="color: #ff0000;">C-c M-s</span>
-  (define-key hs-minor-mode-map [?\C-c ?H] 'hs-hide-all)      <span style="color: #ff0000;">; </span><span style="color: #ff0000;">C-c H</span>
-  (define-key hs-minor-mode-map [?\C-c ?S] 'hs-show-all)      <span style="color: #ff0000;">; </span><span style="color: #ff0000;">C-c S</span>
-  (define-key hs-minor-mode-map [?\C-c ?l] 'hs-hide-level)    <span style="color: #ff0000;">; </span><span style="color: #ff0000;">C-c l</span>
-  (define-key hs-minor-mode-map [?\C-c ?t] 'hs-toggle-hiding) <span style="color: #ff0000;">; </span><span style="color: #ff0000;">C-c t</span>
-  )
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#20851;&#32852;hs-minor&#27169;&#24335;</span>
-(add-hook 'hs-minor-mode-hook 'my-hs-minor-mode-map-setup t)
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#23558;hs-minor&#27169;&#24335;&#19982;&#20854;&#23427;&#20027;&#35201;&#27169;&#24335;&#20851;&#32852;&#36215;&#26469;</span>
-(add-hook 'c-mode-hook 'hs-minor-mode)
-(add-hook 'c++-mode-hook 'hs-minor-mode)
-(add-hook 'java-mode-hook 'hs-minor-mode)
-(add-hook 'html-mode 'hs-minor-mode)
-
-
-
-<span style="color: #ff0000;">;;;;; </span><span style="color: #ff0000;">&#35774;&#32622;tab&#20026;4&#20010;&#31354;&#26684;&#30340;&#23485;&#24230; </span>
-(setq-default c-basic-offset 4)
-(setq-default indent-tabs-mode nil) 
-(setq c-basic-offset 4) 
-(setq indent-tabs-mode nil) 
-(setq default-tab-width 4) 
-(setq tab-width 4) 
-(setq tab-stop-list ()) 
-(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96))
-
-<span style="color: #ff0000;">;;; </span><span style="color: #ff0000;">for common lisp env</span>
-(load (expand-file-name <span style="color: #00ff00;">"~/quicklisp/slime-helper.el"</span>))
-(setq inferior-lisp-program <span style="color: #00ff00;">"/usr/bin/sbcl --noinform"</span>)<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">Replace "sbcl" with the path to your implementation</span>
-(custom-set-variables
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">custom-set-variables was added by Custom.</span>
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">If you edit it by hand, you could mess it up, so be careful.</span>
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">Your init file should contain only one such instance.</span>
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">If there is more than one, they won't work right.</span>
- '(org-blank-before-new-entry (quote ((heading) (plain-list-item))))
- '(org-export-language-setup
-   (quote ((<span style="color: #00ff00;">"en"</span> <span style="color: #00ff00;">"Author"</span> <span style="color: #00ff00;">"Date"</span> <span style="color: #00ff00;">"Table of Contents"</span> <span style="color: #00ff00;">"Footnotes"</span>) 
-           (<span style="color: #00ff00;">"ca"</span> <span style="color: #00ff00;">"Autor"</span> <span style="color: #00ff00;">"Data"</span> <span style="color: #00ff00;">"&amp;Iacute;ndex"</span> <span style="color: #00ff00;">"Peus de p&amp;agrave;gina"</span>) 
-           (<span style="color: #00ff00;">"cs"</span> <span style="color: #00ff00;">"Autor"</span> <span style="color: #00ff00;">"Datum"</span> <span style="color: #00ff00;">"Obsah"</span> <span style="color: #00ff00;">"Pozn\341mky pod carou"</span>) 
-           (<span style="color: #00ff00;">"da"</span> <span style="color: #00ff00;">"Ophavsmand"</span> <span style="color: #00ff00;">"Dato"</span> <span style="color: #00ff00;">"Indhold"</span> <span style="color: #00ff00;">"Fodnoter"</span>) 
-           (<span style="color: #00ff00;">"de"</span> <span style="color: #00ff00;">"Autor"</span> <span style="color: #00ff00;">"Datum"</span> <span style="color: #00ff00;">"Inhaltsverzeichnis"</span> <span style="color: #00ff00;">"Fu&amp;szlig;noten"</span>) 
-           (<span style="color: #00ff00;">"eo"</span> <span style="color: #00ff00;">"A&amp;#365;toro"</span> <span style="color: #00ff00;">"Dato"</span> <span style="color: #00ff00;">"Enhavo"</span> <span style="color: #00ff00;">"Piednotoj"</span>) 
-           (<span style="color: #00ff00;">"es"</span> <span style="color: #00ff00;">"Autor"</span> <span style="color: #00ff00;">"Fecha"</span> <span style="color: #00ff00;">"&amp;Iacute;ndice"</span> <span style="color: #00ff00;">"Pies de p&amp;aacute;gina"</span>) 
-           (<span style="color: #00ff00;">"fi"</span> <span style="color: #00ff00;">"Tekij&amp;auml;"</span> <span style="color: #00ff00;">"P&amp;auml;iv&amp;auml;m&amp;auml;&amp;auml;r&amp;auml;"</span> <span style="color: #00ff00;">"Sis&amp;auml;llysluettelo"</span> <span style="color: #00ff00;">"Alaviitteet"</span>)
-           (<span style="color: #00ff00;">"fr"</span> <span style="color: #00ff00;">"Auteur"</span> <span style="color: #00ff00;">"Date"</span> <span style="color: #00ff00;">"Table des mati&amp;egrave;res"</span> <span style="color: #00ff00;">"Notes de bas de page"</span>) 
-           (<span style="color: #00ff00;">"hu"</span> <span style="color: #00ff00;">"Szerz&amp;otilde;"</span> <span style="color: #00ff00;">"D&amp;aacute;tum"</span> <span style="color: #00ff00;">"Tartalomjegyz&amp;eacute;k"</span> <span style="color: #00ff00;">"L&amp;aacute;bjegyzet"</span>) 
-           (<span style="color: #00ff00;">"is"</span> <span style="color: #00ff00;">"H&amp;ouml;fundur"</span> <span style="color: #00ff00;">"Dagsetning"</span> <span style="color: #00ff00;">"Efnisyfirlit"</span> <span style="color: #00ff00;">"Aftanm&amp;aacute;lsgreinar"</span>) 
-           (<span style="color: #00ff00;">"it"</span> <span style="color: #00ff00;">"Autore"</span> <span style="color: #00ff00;">"Data"</span> <span style="color: #00ff00;">"Indice"</span> <span style="color: #00ff00;">"Note a pi&amp;egrave; di pagina"</span>) 
-           (<span style="color: #00ff00;">"nl"</span> <span style="color: #00ff00;">"Auteur"</span> <span style="color: #00ff00;">"Datum"</span> <span style="color: #00ff00;">"Inhoudsopgave"</span> <span style="color: #00ff00;">"Voetnoten"</span>) 
-           (<span style="color: #00ff00;">"no"</span> <span style="color: #00ff00;">"Forfatter"</span> <span style="color: #00ff00;">"Dato"</span> <span style="color: #00ff00;">"Innhold"</span> <span style="color: #00ff00;">"Fotnoter"</span>) 
-           (<span style="color: #00ff00;">"nb"</span> <span style="color: #00ff00;">"Forfatter"</span> <span style="color: #00ff00;">"Dato"</span> <span style="color: #00ff00;">"Innhold"</span> <span style="color: #00ff00;">"Fotnoter"</span>) 
-           (<span style="color: #00ff00;">"nn"</span> <span style="color: #00ff00;">"Forfattar"</span> <span style="color: #00ff00;">"Dato"</span> <span style="color: #00ff00;">"Innhald"</span> <span style="color: #00ff00;">"Fotnotar"</span>) 
-           (<span style="color: #00ff00;">"pl"</span> <span style="color: #00ff00;">"Autor"</span> <span style="color: #00ff00;">"Data"</span> <span style="color: #00ff00;">"Spis tre&amp;sacute;ci"</span> <span style="color: #00ff00;">"Przypis"</span>) 
-           (<span style="color: #00ff00;">"sv"</span> <span style="color: #00ff00;">"F&amp;ouml;rfattare"</span> <span style="color: #00ff00;">"Datum"</span> <span style="color: #00ff00;">"Inneh&amp;aring;ll"</span> <span style="color: #00ff00;">"Fotnoter"</span>) 
-           (<span style="color: #00ff00;">"zh-CN"</span> <span style="color: #00ff00;">"&#20316;&#32773;"</span> <span style="color: #00ff00;">"&#26085;&#26399;"</span> <span style="color: #00ff00;">"&#30446;&#24405;"</span> <span style="color: #00ff00;">"&#33050;&#27880;"</span>)))))
-(custom-set-faces
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">custom-set-faces was added by Custom.</span>
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">If you edit it by hand, you could mess it up, so be careful.</span>
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">Your init file should contain only one such instance.</span>
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">If there is more than one, they won't work right.</span>
- )
-
-<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(setq org-export-language-setup       (append org-export-language-setup               '(("zh-CN" "&#20316;&#32773;" "&#26085;&#26399;" "&#30446;&#24405;" "&#33050;&#27880;"))))</span>
-<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(setq org-export-default-language "zh-CN")</span>
-(setq org-export-htmlize-output-type 'inline-css)
-(<span style="color: #00ffff; font-weight: bold;">require</span> '<span style="color: #ff00ff;">htmlize</span>)
-<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(require 'org-html)</span>
-<span style="color: #ff0000;">;;</span>
-(<span style="color: #00ffff; font-weight: bold;">require</span> '<span style="color: #ff00ff;">color-theme</span>)
-(setq color-theme-is-global t)
-<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(color-theme-robin-hood)</span>
-
-
-(add-hook 'message-mode-hook 'turn-on-orgstruct)
-(add-hook 'message-mode-hook 'turn-on-orgstruct++)
-
-<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">emacs-w3m</span>
-(<span style="color: #00ffff; font-weight: bold;">require</span> '<span style="color: #ff00ff;">w3m-load</span>)
-(setq w3m-home-page <span style="color: #00ff00;">"http://lesliezhu.github.com"</span>)
-<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(setq w3m-key-binding 'info)</span>
-<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(define-key w3m-mode-map [up] 'previous-line)</span>
-<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(define-key w3m-mode-map [down] 'next-line)</span>
-<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(define-key w3m-mode-map [left] 'backward-char)</span>
-<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(define-key w3m-mode-map [right] 'forward-char)</span>
-</pre>
-
+</ol>
 
 
 
 
 
 <!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread" 
-data-thread-key="<?php echo $this->cid;?>"
-data-title="<?php echo $this->title;?>"
-data-author-key="<?php echo $this->authorId;?>"
-data-url=""></div>
+<div class="ds-thread"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"lesliezhu"};
 (function() {
@@ -360,103 +129,10 @@ ds.charset = 'UTF-8';
     </script>
 <!-- Duoshuo Comment END -->
 
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Org-mode</h2>
-<div class="outline-text-2" id="text-2">
-
-
-
-</div>
-
-<div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> 简介</h3>
-<div class="outline-text-3" id="text-2-1">
-
-<p>   自从开始org-mode写文档以来，我就爱上了写文档，这里是对org-mode的info文档翻译，也是一个笔记。
-</p></div>
-
-</div>
-
-<div id="outline-container-2-2" class="outline-3">
-<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 文档结构</h3>
-<div class="outline-text-3" id="text-2-2">
-
-<p>   org-mode是基于Outline mode的，但提供了一系列方便的命令也进行结构化的文档编辑。
-</p>
-<p>
-   org-mode支持表格、链接、外链接、邮件等;TODO不是org-mode的一个单独部分，而是作为文档的一个小节，因为在文档中常常使用TODO功能。
-</p>
-<p>
-   Tag标签必须是类似 <b>:work:</b> 的形式，一般是前后有相同的符号.
-</p>
-
-</div>
-
-</div>
-
-<div id="outline-container-2-3" class="outline-3">
-<h3 id="sec-2-3"><span class="section-number-3">2.3</span> 中文乱码问题</h3>
-<div class="outline-text-3" id="text-2-3">
-
-
-<p>
-   1). 使用org-mode撰写文档，导出HTML格式时，出现中文乱码现象，这是org-html.el文件中默认是iso-8859-1字符集的原因,需要修改为utf-8.
-</p>
-<p>
-   2). 发现该文件是/usr/share/emacs/23.3/lisp/org/org-html.elc，于是下载一个emacs-24.2版本源码进行编译安装.
-</p>
-<ul>
-<li>安装后是/usr/local/bin/emacs, 将源码复制到/usr/share/emacs/emacs-24.2/。<br/>
-</li>
-<li>修改/usr/share/emacs/emacs-24.2/lisp/org/org-html.el文件，并在~/.bashrc中设置：
-</li>
-</ul>
-
-
-
-
-<pre class="src src-bash">#!/usr/bin/env bash
-alias emacs='/usr/local/bin/emacs -nw'
-</pre>
-
-
-
-
-
-
-
-
-
-<!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread">
-data-thread-key="<?php echo $this->cid;?>"
-data-title="<?php echo $this->title;?>"
-data-author-key="<?php echo $this->authorId;?>"
-data-url=""></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"lesliezhu"};
-(function() {
-var ds = document.createElement('script');
-ds.type = 'text/javascript';ds.async = true;
-ds.src = 'http://static.duoshuo.com/embed.js';
-ds.charset = 'UTF-8';
-(document.getElementsByTagName('head')[0] 
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-    </script>
-<!-- Duoshuo Comment END -->
-</div>
-</div>
-</div>
 </div>
 
 <div id="postamble">
-<p class="date">日期: 2013-06-09 03:37:54 PDT</p>
+<p class="date">日期: 2013-06-09 04:19:35 PDT</p>
 <p class="author">作者: Leslie</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
