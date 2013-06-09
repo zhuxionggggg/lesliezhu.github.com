@@ -47,7 +47,9 @@
 
 #+begin_html
 <!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread"></div>
+<div class="ds-thread" 
+date-url="lesliezhu.github.com/EMACS/index.html"
+data-author-key="LeslieZhu"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"lesliezhu"};
 (function() {
