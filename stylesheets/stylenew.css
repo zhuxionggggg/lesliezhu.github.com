@@ -219,12 +219,13 @@ new pre {
 
 pre {
   width: auto;                  /*100%*/
-  padding: 10px;
+  padding: 20px;
   font-family: Monaco, Consolas, "Lucida Console", monospace;
   font-size: 100%;
   background-color: rgb(233, 220, 178);
-  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  box-shadow: 0 0 10px rgb(5, 5, 5);
   overflow: auto;
+  display: block;
 }
 
 code {
