@@ -4,8 +4,14 @@
 #+STARTUP: showeverything
 #+STARTUP: indent
 
-#+STARTUP: hideblocks
+##+STARTUP: hideblocks
 #+STARTUP: nohideblocks
+
+##+STARTUP: align
+##+STARTUP: noalign
+
+
+
 #+OPTIONS: ^:{}
 
 #+OPTIONS: LaTeX:t         
@@ -21,6 +27,8 @@
 #+LINK_UP: http://lesliezhu.github.com/EMACS/index.html
 #+LINK_HOME: http://lesliezhu.github.com
 
+
+
 #+STYLE: <link rel="stylesheet" type="text/css" href="../stylesheets/stylenew.css" />
 #+LANGUAGE: zh-CN
 
@@ -30,21 +38,16 @@
 
 #+TITLE: EMACS
 
+
 * EMACS基本配置
+
+
 
 #+include: "./config.org"
 
 * Org-mode
 
-#+include: "./org-mode.org"
-
-#+begin_html
-<script src="https://gist.github.com/LeslieZhu/4466222.js"></script>
-#+end_html
-
-#+begin_src python -n -r
-import os,time
-#+end_src
+#+include: "./org-mode.org" 
 
 
 

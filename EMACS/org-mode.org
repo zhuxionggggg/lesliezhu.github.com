@@ -1,3 +1,13 @@
+** 简介
+   自从开始org-mode写文档以来，我就爱上了写文档，这里是对org-mode的info文档翻译，也是一个笔记。
+** 文档结构
+   org-mode是基于Outline mode的，但提供了一系列方便的命令也进行结构化的文档编辑。
+
+   org-mode支持表格、链接、外链接、邮件等;TODO不是org-mode的一个单独部分，而是作为文档的一个小节，因为在文档中常常使用TODO功能。
+
+   Tag标签必须是类似 *:work:* 的形式，一般是前后有相同的符号.
+
+
 ** 中文乱码问题
 
    1). 使用org-mode撰写文档，导出HTML格式时，出现中文乱码现象，这是org-html.el文件中默认是iso-8859-1字符集的原因,需要修改为utf-8.
@@ -7,6 +17,8 @@
    - 安装后是/usr/local/bin/emacs, 将源码复制到/usr/share/emacs/emacs-24.2/。\\
    - 修改/usr/share/emacs/emacs-24.2/lisp/org/org-html.el文件，并在~/.bashrc中设置：
    #+begin_src bash
+   #!/usr/bin/env bash
    alias emacs='/usr/local/bin/emacs -nw'
    #+end_src
     
+
