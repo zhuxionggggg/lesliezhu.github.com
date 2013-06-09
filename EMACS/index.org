@@ -48,8 +48,10 @@
 #+begin_html
 <!-- Duoshuo Comment BEGIN -->
 <div class="ds-thread" 
-date-url="lesliezhu.github.com/EMACS/index.html"
-data-author-key="LeslieZhu"></div>
+data-thread-key="<?php echo $this->cid;?>"
+data-title="<?php echo $this->title;?>"
+data-author-key="<?php echo $this->authorId;?>"
+data-url=""></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"lesliezhu"};
 (function() {
@@ -72,7 +74,11 @@ ds.charset = 'UTF-8';
 
 #+begin_html
 <!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread"></div>
+<div class="ds-thread">
+data-thread-key="<?php echo $this->cid;?>"
+data-title="<?php echo $this->title;?>"
+data-author-key="<?php echo $this->authorId;?>"
+data-url=""></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"lesliezhu"};
 (function() {
