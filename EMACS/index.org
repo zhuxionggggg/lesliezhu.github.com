@@ -10,8 +10,6 @@
 #+OPTIONS: LaTeX:nil       
 #+OPTIONS: LaTeX:verbatim  
 #+OPTIONS: H:8
-#+OPTIONS: toc:3
-#+INFOJS_OPT: view:info toc:3
 #+LINK_UP: http://lesliezhu.github.com/EMACS/index.html
 #+LINK_HOME: http://lesliezhu.github.com
 #+STYLE: <link rel="stylesheet" type="text/css" href="../stylesheets/stylenew.css" />
@@ -28,9 +26,6 @@
 1) [[./config.html][EMACS基本配置]]
 2) [[./org-mode.html][Org-mode]]
 
-* hello
-
-#+include: "./org-mode.org"
 
 #+begin_html
 <!-- Duoshuo Comment BEGIN -->
