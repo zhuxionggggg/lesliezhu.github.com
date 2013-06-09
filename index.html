@@ -105,7 +105,8 @@
 
 
       <!-- Duoshuo Comment BEGIN -->
-      <div class="ds-thread"></div>
+      <div class="ds-thread">
+        data-title="<?php echo $this->title;?>" data-author-key="<?php echo $this->authorId;?>" data-url=""></div>
       <script type="text/javascript">
         var duoshuoQuery = {short_name:"lesliezhu"};
         (function() {
@@ -117,7 +118,7 @@
         || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
       </script>
-      <!-- Duoshuo Comment END -->
+    <!-- Duoshuo Comment END -->
 
     </div>
 
