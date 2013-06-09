@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="EMACS"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-06-08 23:48:43 PDT"/>
+<meta name="generated" content="2013-06-09 02:04:07 PDT"/>
 <meta name="author" content="Leslie"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -325,6 +325,15 @@ org_html_manager.setup();  // activate after the parameters are set
 
 (add-hook 'message-mode-hook 'turn-on-orgstruct)
 (add-hook 'message-mode-hook 'turn-on-orgstruct++)
+
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">emacs-w3m</span>
+(<span style="color: #00ffff; font-weight: bold;">require</span> '<span style="color: #ff00ff;">w3m-load</span>)
+(setq w3m-home-page <span style="color: #00ff00;">"http://lesliezhu.github.com"</span>)
+<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(setq w3m-key-binding 'info)</span>
+<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(define-key w3m-mode-map [up] 'previous-line)</span>
+<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(define-key w3m-mode-map [down] 'next-line)</span>
+<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(define-key w3m-mode-map [left] 'backward-char)</span>
+<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(define-key w3m-mode-map [right] 'forward-char)</span>
 </pre>
 
 
@@ -400,13 +409,30 @@ alias emacs='/usr/local/bin/emacs -nw'
 
 
 
+
+
+<!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lesliezhu"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';ds.async = true;
+ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] 
+|       | document.getElementsByTagName('body')[0]).appendChild(ds); |
+|       |                                                            |
+| })(); |                                                            |
+|       | </script>                                                  |
+|       | <!-- Duoshuo Comment END -->                               |
 </div>
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">日期: 2013-06-08 23:48:43 PDT</p>
+<p class="date">日期: 2013-06-09 02:04:07 PDT</p>
 <p class="author">作者: Leslie</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
