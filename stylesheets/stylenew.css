@@ -207,16 +207,6 @@ pre, code {
 
 }
 
-new pre { 
-    font-family: Monaco, Consolas, "Lucida Console", monospace; 
-    color: #00FF00; 
-    background-color: #FFFFCC; 
-    padding: 10px; 
-    border: 1px solid gray; 
-    overflow: auto; 
-    box-shadow: 0px 0px 4px rgba(0,0,0,0.23); 
-} 
-
 pre {
   width: auto;                  /*100%*/
   padding: 20px;
