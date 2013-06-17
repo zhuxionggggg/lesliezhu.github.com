@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="EMACS 配置文件"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-06-09 04:13:31 PDT"/>
+<meta name="generated" content="2013-06-17 07:52:15 PDT"/>
 <meta name="author" content="Leslie"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -123,7 +123,7 @@
 
 
 
-<pre class="src src-emacs-lisp"> <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">Emacs config of Leslie</span>
+<pre class="src src-emacs-lisp"><span style="color: #ff0000;">;; </span><span style="color: #ff0000;">Emacs config of Leslie</span>
 <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">pythonisland@gmail.com</span>
 
 <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#22522;&#26412;&#35774;&#32622;</span>
@@ -194,6 +194,8 @@
 <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#22686;&#21152;hook</span>
 (add-hook 'org-mode-hook 'turn-on-font-lock)  <span style="color: #ff0000;">; </span><span style="color: #ff0000;">Org buffers only</span>
 
+
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#35774;&#32622;&#20195;&#30721;&#25240;&#21472;</span>
 (<span style="color: #00ffff; font-weight: bold;">defun</span> <span style="color: #0000ff; font-weight: bold;">my-hs-minor-mode-map-setup</span> ()
   <span style="color: #00ff00;">"&#20026;hs-minor-mode&#35774;&#32622;&#33258;&#24049;&#30340;&#32465;&#23450;&#38190;"</span>
   (define-key hs-minor-mode-map [?\C-c ?h] 'hs-hide-block)    <span style="color: #ff0000;">; </span><span style="color: #ff0000;">C-c h</span>
@@ -214,6 +216,8 @@
 (add-hook 'c++-mode-hook 'hs-minor-mode)
 (add-hook 'java-mode-hook 'hs-minor-mode)
 (add-hook 'html-mode 'hs-minor-mode)
+(add-hook 'python-mode 'hs-minor-mode)
+(add-hook 'javascript-mode 'hs-minor-mode)
 
 
 
@@ -230,6 +234,9 @@
 <span style="color: #ff0000;">;;; </span><span style="color: #ff0000;">for common lisp env</span>
 (load (expand-file-name <span style="color: #00ff00;">"~/quicklisp/slime-helper.el"</span>))
 (setq inferior-lisp-program <span style="color: #00ff00;">"/usr/bin/sbcl --noinform"</span>)<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">Replace "sbcl" with the path to your implementation</span>
+
+
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#35774;&#32622;org-mode&#36755;&#20986;&#20013;&#25991;&#30446;&#24405;</span>
 (custom-set-variables
   <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">custom-set-variables was added by Custom.</span>
   <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">If you edit it by hand, you could mess it up, so be careful.</span>
@@ -265,6 +272,8 @@
 
 <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(setq org-export-language-setup       (append org-export-language-setup               '(("zh-CN" "&#20316;&#32773;" "&#26085;&#26399;" "&#30446;&#24405;" "&#33050;&#27880;"))))</span>
 <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(setq org-export-default-language "zh-CN")</span>
+
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#35774;&#32622;org-mode&#23548;&#20986;html</span>
 (setq org-export-htmlize-output-type 'inline-css)
 (<span style="color: #00ffff; font-weight: bold;">require</span> '<span style="color: #ff00ff;">htmlize</span>)
 <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(require 'org-html)</span>
@@ -285,6 +294,73 @@
 <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(define-key w3m-mode-map [down] 'next-line)</span>
 <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(define-key w3m-mode-map [left] 'backward-char)</span>
 <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(define-key w3m-mode-map [right] 'forward-char)</span>
+
+
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">for python code</span>
+(<span style="color: #00ffff; font-weight: bold;">defun</span> <span style="color: #0000ff; font-weight: bold;">py-outline-level</span> ()
+  <span style="color: #00ff00;">"This is so that `current-column` DTRT in otherwise-hidden text"</span>
+  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">from ada-mode.el</span>
+  (<span style="color: #00ffff; font-weight: bold;">let</span> (buffer-invisibility-spec)
+    (<span style="color: #00ffff; font-weight: bold;">save-excursion</span>
+      (skip-chars-forward <span style="color: #00ff00;">"\t "</span>)
+      (current-column))))
+
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">this fragment originally came from the web somewhere, but the outline-regexp</span>
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">was horribly broken and is broken in all instances of this code floating</span>
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">around. Finally fixed by Charl P. Botha &lt;&lt;a href="http://cpbotha.net/"&gt;http://cpbotha.net/&lt;/a&gt;&gt;</span>
+
+(<span style="color: #00ffff; font-weight: bold;">defun</span> <span style="color: #0000ff; font-weight: bold;">my-python-hook</span> ()
+  (setq outline-regexp <span style="color: #00ff00;">"[</span><span style="color: #00ff00;">^</span><span style="color: #00ff00;"> \t\n]</span><span style="color: #00ff00; font-weight: bold;">\\</span><span style="color: #00ff00; font-weight: bold;">|</span><span style="color: #00ff00;">[ \t]*</span><span style="color: #00ff00; font-weight: bold;">\\</span><span style="color: #00ff00; font-weight: bold;">(</span><span style="color: #00ff00;">def[ \t]+</span><span style="color: #00ff00; font-weight: bold;">\\</span><span style="color: #00ff00; font-weight: bold;">|</span><span style="color: #00ff00;">class[ \t]+</span><span style="color: #00ff00; font-weight: bold;">\\</span><span style="color: #00ff00; font-weight: bold;">)</span><span style="color: #00ff00;">"</span>)
+  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">enable our level computation</span>
+  (setq outline-level 'py-outline-level)
+  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">do not use their \C-c@ prefix, too hard to type. Note this overides</span>
+  <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">some python mode bindings</span>
+  (setq outline-minor-mode-prefix <span style="color: #00ff00;">"\C-c"</span>)
+  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">turn on outline mode</span>
+  (outline-minor-mode t)
+  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">initially hide all but the headers</span>
+  (hide-body)
+  (show-paren-mode 1))
+
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">C-c C-c hide code</span>
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">C-c C-s show code</span>
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#35774;&#32622;&#20195;&#30721;&#25240;&#21472;</span>
+(add-hook 'python-mode-hook 'my-python-hook)
+
+
+
+
+
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">for python code</span>
+<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(defun my-python-mode()</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(define-key python-mode-map [return] 'newline-and-indent)</span>
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#36825;&#31181;&#23450;&#20041;&#30340;&#26041;&#24335;&#19982;&#19978;&#19968;&#21477;&#37027;&#31181;&#19981;&#21516;&#30340;&#26159;&#24403;&#22312;&#27880;&#37322;&#30340;&#27169;&#24335;&#19979;&#25353;&#22238;&#36710;&#26032;&#30340;&#19968;&#34892;&#26159;&#23545;&#40784;&#30340;&#27880;&#37322;</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(define-key python-mode-map [return] 'comment-indent-new-line)</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(define-key python-mode-map "\C-cc" 'comment-or-uncomment-region);</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(define-key mslk-c++-key "\C-o" 'hs-hide-all)</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(define-key mslk-c++-key "\C-s" 'hs-show-all)</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(define-key mslk-c++-key "\C-ch" 'hs-hide-block)</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(define-key mslk-c++-key "\C-cs" 'hs-show-block)</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(define-key mslk-c++-key "\C-l" 'hs-hide-level)</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(define-key mslk-c++-key "\C-m" 'hs-toggle-hiding)</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(interactive)</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(imenu-add-menubar-index) ;; &#22312;&#33756;&#21333;&#26465;&#37324;&#21152;&#20837;&#20989;&#25968;&#21015;&#34920;&#33756;&#21333;</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(hs-minor-mode) ;; &#25171;&#24320;&#21487;&#20197;&#25240;&#21472;&#30340;&#27169;&#24335;</span>
+<span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">(custom-set-variables</span>
+<span style="color: #ff0000;">;;   </span><span style="color: #ff0000;">'(python-honour-comment-indentation t)</span>
+    <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#25324;&#21495;&#25104;&#23545;&#25351;&#31034;</span>
+<span style="color: #ff0000;">;;   </span><span style="color: #ff0000;">'(show-paren-mode t)))</span>
+
+<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(add-hook 'hs-minor-mode-hook 'my-hs-minor-mode-map-setup t)</span>
+
+
+
+<span style="color: #ff0000;">;;</span><span style="color: #ff0000;">(require 'pycomplete)</span>
+
+
+(add-to-list 'load-path   <span style="color: #00ff00;">"~/.emacs.d/plugins/yasnippet/"</span>)
+(<span style="color: #00ffff; font-weight: bold;">require</span> '<span style="color: #ff00ff;">yasnippet</span>)
+(yas-global-mode 1)
 </pre>
 
 
@@ -309,7 +385,7 @@ ds.charset = 'UTF-8';
 </div>
 
 <div id="postamble">
-<p class="date">日期: 2013-06-09 04:13:31 PDT</p>
+<p class="date">日期: 2013-06-17 07:52:15 PDT</p>
 <p class="author">作者: Leslie</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
