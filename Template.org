@@ -1,7 +1,5 @@
 #+STARTUP: overview
 #+STARTUP: content
-#+STARTUP: showall
-#+STARTUP: showeverything
 #+STARTUP: indent
 
 #+STARTUP: hideblocks
