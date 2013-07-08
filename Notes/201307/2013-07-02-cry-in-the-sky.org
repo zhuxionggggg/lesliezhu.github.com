@@ -1,0 +1,37 @@
+** 宿命
+
+   今天又被叫去谈话，说我最近几个月没有状态，没有用心做事情。这几个月的确工作没有节奏，不知道是因为结婚后事情多，人心浮躁，还是因为
+   其它。不过，最近学习、工作的劲头都不够。
+
+   看了刚来同事的一个小程序，写的很规范，挑不出半点毛病；想想自己，是否没有了当初的热情，也开始将就了，没有将事情做到极致的念头了。
+
+   最近感觉很忙，做了一个接一个的项目，但没有项目都是半途而止，谈不上什麽成果，自然没有什麽成就感。细细想来，会出现这种情况应该有下列
+   原因：
+   - 不够严谨认真，做事情浮躁潦草，不够重视，不够专业，没有全心全意去做
+   - 项目管理者做的不够，在项目成员和项目负责人之间的角色没有把握好，没有调动成员的积极性
+   - 项目流程不够到位，需求分析时间太匆忙，计划了30%就开始工作
+   - 没有充分的交流，沟通成本太高，事情落实不到位，模糊不清
+   - 团队是统一明确的目标和团结一致实现目标的队员，缺一不可
+
+   以上几点问题，我通通都有，说来也很愧疚。
+
+   必智必勇，必忠必诚！
+
+   
+   
+
+
+#+begin_html
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lesliezhu"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';ds.async = true;
+ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] 
+|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+#+end_html
