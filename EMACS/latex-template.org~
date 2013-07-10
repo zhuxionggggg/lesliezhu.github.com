@@ -1,18 +1,25 @@
 #+STARTUP: overview
 #+STARTUP: content
-#+STARTUP: showall
-#+STARTUP: showeverything
 #+STARTUP: indent
+
+#+STARTUP: hideblocks
 #+STARTUP: nohideblocks
 #+OPTIONS: ^:{}
+
 #+OPTIONS: LaTeX:t         
 #+OPTIONS: LaTeX:dvipng    
 #+OPTIONS: LaTeX:nil       
 #+OPTIONS: LaTeX:verbatim  
+
 #+OPTIONS: H:8
-#+LINK_UP: http://lesliezhu.github.com/EMACS/index.html
+#+OPTIONS: toc:3
+#+INFOJS_OPT: view:info toc:1
+
+
+#+LINK_UP: http://lesliezhu.github.com
 #+LINK_HOME: http://lesliezhu.github.com
-#+STYLE: <link rel="stylesheet" type="text/css" href="../stylesheets/stylenew.css" />
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/stylenew.css" />
 #+LANGUAGE: zh-CN
 
 #+AUTHOR: Leslie
@@ -21,15 +28,13 @@
 
 #+TITLE: EMACS
 
-目录:
+* 前言
 
-1) [[./config.html][EMACS基本配置]]
-2) [[./org-mode.html][Org-mode]]
-3) [[./latex-template.html][LaTeX-Template]]
+  这是一个模板。
+
 
 
 #+begin_html
-<!-- Duoshuo Comment BEGIN -->
 <div class="ds-thread"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"lesliezhu"};
@@ -39,9 +44,7 @@ ds.type = 'text/javascript';ds.async = true;
 ds.src = 'http://static.duoshuo.com/embed.js';
 ds.charset = 'UTF-8';
 (document.getElementsByTagName('head')[0] 
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- Duoshuo Comment END -->
+|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
 #+end_html
-

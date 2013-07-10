@@ -1,0 +1,128 @@
+#+STARTUP: overview
+#+STARTUP: content
+#+STARTUP: indent
+
+#+STARTUP: hideblocks
+#+STARTUP: nohideblocks
+#+OPTIONS: ^:{}
+
+#+OPTIONS: LaTeX:t         
+#+OPTIONS: LaTeX:dvipng    
+#+OPTIONS: LaTeX:nil       
+#+OPTIONS: LaTeX:verbatim  
+
+#+OPTIONS: H:8
+#+OPTIONS: toc:3
+#+INFOJS_OPT: view:info toc:1
+
+
+#+LINK_UP: http://lesliezhu.github.com
+#+LINK_HOME: http://lesliezhu.github.com
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/stylenew.css" />
+#+LANGUAGE: zh-CN
+
+#+AUTHOR: Leslie
+#+EMAIL: pythonisland@gmail.com
+
+
+#+TITLE: A LaTeX Template
+
+* Source Code
+
+#+begin_src latex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+
+
+
+\usepackage{xltxtra}
+\setmainfont[Mapping=tex-text]{WenQuanYi Zen Hei} %font
+\XeTeXlinebreaklocale ``zh''  
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\usepackage{geometry}\geometry{left=1.00cm,right=2.5cm,top=2.5cm,bottom=2.5cm} %width,height
+\usepackage{indentfirst}             
+\usepackage[perpage,symbol]{footmisc}
+\usepackage{titletoc}                
+\titlecontents{section}[0pt]{\addvspace{2pt}\filright}
+              {\contentspush{\thecontentslabel\ }}
+              {}{\titlerule*[8pt]{.}\contentspage}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{numbers=left,
+  numberstyle=\tiny,
+  keywordstyle=\color{blue!70},
+  commentstyle=\color{red!50!green!50!blue!50},
+  frame=shadowbox,
+  rulesepcolor=\color{red!20!green!20!blue!20}
+}
+\lstset{language=C++}
+\lstset{breaklines}
+\lstset{extendedchars=false}  %source code box
+
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{LaTeX Template}
+\author{Leslie Zhu}
+\date{\today}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.8.11}}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{8}
+\tableofcontents
+\vspace*{1cm}
+
+\section{example one}
+\label{sec-1}
+
+
+
+\begin{verbatim}
+example two
+\end{verbatim}
+
+\section{example three}
+\label{sec-2}
+
+
+base on the discuss....
+
+\end{document}
+ #+end_src
+
+
+
+#+begin_html
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lesliezhu"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';ds.async = true;
+ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] 
+|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+#+end_html
