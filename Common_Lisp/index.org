@@ -30,9 +30,9 @@
 
 #+TITLE: Common Lisp
 
-* 前言
+* 目录
 
-  这是一个模板。
+[[./install-common-lisp-in-fedora.html][Fedora环境建立common lisp环境]]
 
 
 
