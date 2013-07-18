@@ -1,37 +1,69 @@
-** Fedora 15环境下安装Common Lisp(转载)
+#+STARTUP: overview
+#+STARTUP: content
+#+STARTUP: showall
+#+STARTUP: showeverything
+#+STARTUP: indent
 
-   需要用到的软件：
+#+STARTUP: hideblocks
+#+STARTUP: nohideblocks
+#+OPTIONS: ^:{}
 
+#+OPTIONS: LaTeX:t         
+#+OPTIONS: LaTeX:dvipng    
+#+OPTIONS: LaTeX:nil       
+#+OPTIONS: LaTeX:verbatim  
+
+#+OPTIONS: H:8
+#+OPTIONS: toc:3
+#+INFOJS_OPT: view:info toc:1
+
+
+#+LINK_UP: http://lesliezhu.github.com/Common_Lisp/index.html
+#+LINK_HOME: http://lesliezhu.github.com
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/stylenew.css" />
+#+LANGUAGE: zh-CN
+
+#+AUTHOR: Leslie
+#+EMAIL: pythonisland@gmail.com
+
+
+#+TITLE: Fedora 15环境下安装Common Lisp(转载)
+
+* Fedora 15环境下安装Common Lisp(转载)
+  
+  需要用到的软件：
+  
    - *sbcl* ，比较流行的一种common lisp实现；
    - *emacs* ，用作开发环境，虽然比较复杂，但是比原来的命令行好用多了；
    - *slime* ，emas下的一个交互式lisp开发环境；
    - *quicklisp* ，common lisp包管理系统。
 
-   先用yum安装emacs和sbcl。
-
-   然后按如下步骤安装quicklisp。
-
-   下载quicklisp安装脚本：
+  先用yum安装emacs和sbcl。
+  
+  然后按如下步骤安装quicklisp。
+  
+  下载quicklisp安装脚本：
     #+begin_example
     wget http://beta.quicklisp.org/quicklisp.lisp
     #+end_example
-
-   启动sbcl：
+  
+  启动sbcl：
    #+begin_example
    sbcl --load quicklisp.lisp   
    #+end_example
-
-   安装quicklisp：
+  
+  安装quicklisp：
    #+begin_example
    (quicklisp-quickstart:install)   
    #+end_example
-
-   添加quicklisp到启动文件，以后启动sbcl会自动加载quicklisp
+  
+  添加quicklisp到启动文件，以后启动sbcl会自动加载quicklisp
    #+begin_example
    (ql:add-to-init-file)   
    #+end_example
-
-   将会添加下列代码到~/.sbclrc文件中:
+  
+  将会添加下列代码到~/.sbclrc文件中:
    #+begin_src lisp
    ;;;I will append the following lines to #P"/home/zhuchunlite/.sbclrc":
    ;;; The following lines added by ql:add-to-init-file:
@@ -41,14 +73,14 @@
    (when (probe-file quicklisp-init)
      (load quicklisp-init)))
    #+end_src
-
-   用quicklisp安装slime
+  
+  用quicklisp安装slime
    #+begin_example
    (ql:quickload "quicklisp-slime-helper")   
    #+end_example
-
+  
    安装脚本执行完之后会给出一段elisp代码，按照说明把代码加入.emacs文件。
-
+   
    代码示例：
    #+begin_example
    (load (expand-file-name "~/quicklisp/slime-helper.el"))
@@ -57,9 +89,9 @@
    ;;改为==>
    (setq inferior-lisp-program "/usr/bin/sbcl --noinform")
    #+end_example
-
+   
    启动emacs，M-x slime启动slime，进入交互式cl编程环境，大功告成！如果还嫌麻烦，直接用Lispbox。
-
+   
    Slime模式一些按键：
    #+begin_example
    REPL下的快捷键
@@ -79,12 +111,12 @@
 　 C-c C-d ~　　               在Common Lisp Hyperspec中查找某个特定的format控制字符
 　 C-c C-w C-h　　             列出所有与交叉引用相关的快捷键绑定(都是以C-c C-w开头)
    #+end_example
-
+   
    执行Profile
    #+begin_example
    M-x slime-toggle-profile-fdefinition
 　 M-x slime-profile-package
 　 M-x slime-profile-report
    #+end_example
-
+   
    Source:http://life-sucks.net/wp/2011/10/25/fedora15%E4%B8%8B%E5%AE%89%E8%A3%85common-lisp%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/
