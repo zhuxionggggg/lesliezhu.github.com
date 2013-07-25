@@ -1,4 +1,4 @@
-* Common Lisp笔记一 : 快速体验
+*** Common Lisp笔记一 : 快速体验
 
 
    从网站http://www.paulgraham.com/ 可以获取到一些学习资料。

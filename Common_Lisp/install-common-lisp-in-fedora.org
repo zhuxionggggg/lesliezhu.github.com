@@ -1,59 +1,27 @@
-#+STARTUP: overview
-#+STARTUP: content
-#+STARTUP: showall
-#+STARTUP: showeverything
-#+STARTUP: indent
-
-#+STARTUP: hideblocks
-#+STARTUP: nohideblocks
-#+OPTIONS: ^:{}
-
-#+OPTIONS: LaTeX:t         
-#+OPTIONS: LaTeX:dvipng    
-#+OPTIONS: LaTeX:nil       
-#+OPTIONS: LaTeX:verbatim  
-
-#+OPTIONS: H:8
-#+OPTIONS: toc:3
-#+INFOJS_OPT: view:info toc:1
-
-
-#+LINK_UP: http://lesliezhu.github.com/Common_Lisp/index.html
-#+LINK_HOME: http://lesliezhu.github.com
-
-#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/stylenew.css" />
-#+LANGUAGE: zh-CN
-
-#+AUTHOR: Leslie
-#+EMAIL: pythonisland@gmail.com
-
-
-#+TITLE: Fedora 15环境下安装Common Lisp(转载)
-
-* Fedora 15环境下安装Common Lisp(转载)
+*** Fedora 15环境下安装Common Lisp(转载)
   
-  需要用到的软件：
-  
+需要用到的软件：
+
    - *sbcl* ，比较流行的一种common lisp实现；
    - *emacs* ，用作开发环境，虽然比较复杂，但是比原来的命令行好用多了；
    - *slime* ，emas下的一个交互式lisp开发环境；
    - *quicklisp* ，common lisp包管理系统。
+     
+先用yum安装emacs和sbcl。
+  
+然后按如下步骤安装quicklisp。
 
-  先用yum安装emacs和sbcl。
-  
-  然后按如下步骤安装quicklisp。
-  
-  下载quicklisp安装脚本：
+下载quicklisp安装脚本：
     #+begin_example
     wget http://beta.quicklisp.org/quicklisp.lisp
     #+end_example
-  
-  启动sbcl：
+
+启动sbcl：
    #+begin_example
    sbcl --load quicklisp.lisp   
    #+end_example
-  
-  安装quicklisp：
+
+安装quicklisp：
    #+begin_example
    (quicklisp-quickstart:install)   
    #+end_example

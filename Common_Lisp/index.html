@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Common Lisp"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-25 06:02:34 PDT"/>
+<meta name="generated" content="2013-07-25 06:15:26 PDT"/>
 <meta name="author" content="Leslie"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -130,7 +130,12 @@ org_html_manager.setup();  // activate after the parameters are set
 <ul>
 <li><a href="#sec-1">1 学习资料和学习计划</a>
 <ul>
-<li><a href="#sec-1-1">1.1 概览</a></li>
+<li><a href="#sec-1-1">1.1 概览</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1 Fedora 15环境下安装Common Lisp(转载)</a></li>
+<li><a href="#sec-1-1-2">1.1.2 Common Lisp笔记一 : 快速体验</a></li>
+</ul>
+</li>
 <li><a href="#sec-1-2">1.2 列表(List)操作</a></li>
 <li><a href="#sec-1-3">1.3 数据结构</a></li>
 <li><a href="#sec-1-4">1.4 控制流</a></li>
@@ -144,8 +149,6 @@ org_html_manager.setup();  // activate after the parameters are set
 <li><a href="#sec-1-12">1.12 包和ASDF</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">2 Fedora 15环境下安装Common Lisp(转载)</a></li>
-<li><a href="#sec-3">3 Common Lisp笔记一 : 快速体验</a></li>
 </ul>
 </div>
 </div>
@@ -165,117 +168,16 @@ org_html_manager.setup();  // activate after the parameters are set
 <h3 id="sec-1-1"><span class="section-number-3">1.1</span> <span class="todo TODO">TODO</span> 概览</h3>
 <div class="outline-text-3" id="text-1-1">
 
-</div>
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> <span class="todo TODO">TODO</span> 列表(List)操作</h3>
-<div class="outline-text-3" id="text-1-2">
-
-</div>
-
-</div>
-
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> <span class="todo TODO">TODO</span> 数据结构</h3>
-<div class="outline-text-3" id="text-1-3">
-
-</div>
-
-</div>
-
-<div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> <span class="todo TODO">TODO</span> 控制流</h3>
-<div class="outline-text-3" id="text-1-4">
-
-</div>
-
-</div>
-
-<div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> <span class="todo TODO">TODO</span> 函数</h3>
-<div class="outline-text-3" id="text-1-5">
-
-</div>
-
-</div>
-
-<div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> <span class="todo TODO">TODO</span> 输入输出</h3>
-<div class="outline-text-3" id="text-1-6">
-
-</div>
-
-</div>
-
-<div id="outline-container-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> <span class="todo TODO">TODO</span> 符号</h3>
-<div class="outline-text-3" id="text-1-7">
-
-</div>
-
-</div>
-
-<div id="outline-container-1-8" class="outline-3">
-<h3 id="sec-1-8"><span class="section-number-3">1.8</span> <span class="todo TODO">TODO</span> 数字</h3>
-<div class="outline-text-3" id="text-1-8">
-
-</div>
-
-</div>
-
-<div id="outline-container-1-9" class="outline-3">
-<h3 id="sec-1-9"><span class="section-number-3">1.9</span> <span class="todo TODO">TODO</span> 宏</h3>
-<div class="outline-text-3" id="text-1-9">
-
-</div>
-
-</div>
-
-<div id="outline-container-1-10" class="outline-3">
-<h3 id="sec-1-10"><span class="section-number-3">1.10</span> <span class="todo TODO">TODO</span> CLOS对象系统</h3>
-<div class="outline-text-3" id="text-1-10">
-
-</div>
-
-</div>
-
-<div id="outline-container-1-11" class="outline-3">
-<h3 id="sec-1-11"><span class="section-number-3">1.11</span> <span class="todo TODO">TODO</span> 结构</h3>
-<div class="outline-text-3" id="text-1-11">
-
-</div>
-
-</div>
-
-<div id="outline-container-1-12" class="outline-3">
-<h3 id="sec-1-12"><span class="section-number-3">1.12</span> <span class="todo TODO">TODO</span> 包和ASDF</h3>
-<div class="outline-text-3" id="text-1-12">
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Fedora 15环境下安装Common Lisp(转载)</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Fedora 15环境下安装Common Lisp(转载)</h4>
+<div class="outline-text-4" id="text-1-1-1">
 
 
 <p>  
-  需要用到的软件：
+需要用到的软件：
 </p>
 <ul>
 <li><b>sbcl</b> ，比较流行的一种common lisp实现；
@@ -289,14 +191,14 @@ org_html_manager.setup();  // activate after the parameters are set
 </ul>
 
 
+<p>     
+先用yum安装emacs和sbcl。
+</p>
+<p>  
+然后按如下步骤安装quicklisp。
+</p>
 <p>
-  先用yum安装emacs和sbcl。
-</p>
-<p>  
-  然后按如下步骤安装quicklisp。
-</p>
-<p>  
-  下载quicklisp安装脚本：
+下载quicklisp安装脚本：
 </p>
 
 
@@ -304,8 +206,8 @@ org_html_manager.setup();  // activate after the parameters are set
 </pre>
 
 
-<p>  
-  启动sbcl：
+<p>
+启动sbcl：
 </p>
 
 
@@ -313,8 +215,8 @@ org_html_manager.setup();  // activate after the parameters are set
 </pre>
 
 
-<p>  
-  安装quicklisp：
+<p>
+安装quicklisp：
 </p>
 
 
@@ -416,9 +318,9 @@ org_html_manager.setup();  // activate after the parameters are set
 
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Common Lisp笔记一 : 快速体验</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Common Lisp笔记一 : 快速体验</h4>
+<div class="outline-text-4" id="text-1-1-2">
 
 
 
@@ -649,15 +551,106 @@ CL-USER&gt; (summit (list 1 2 3 nil 4 nil))
 </pre>
 
 
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> <span class="todo TODO">TODO</span> 列表(List)操作</h3>
+<div class="outline-text-3" id="text-1-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> <span class="todo TODO">TODO</span> 数据结构</h3>
+<div class="outline-text-3" id="text-1-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> <span class="todo TODO">TODO</span> 控制流</h3>
+<div class="outline-text-3" id="text-1-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> <span class="todo TODO">TODO</span> 函数</h3>
+<div class="outline-text-3" id="text-1-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> <span class="todo TODO">TODO</span> 输入输出</h3>
+<div class="outline-text-3" id="text-1-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> <span class="todo TODO">TODO</span> 符号</h3>
+<div class="outline-text-3" id="text-1-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> <span class="todo TODO">TODO</span> 数字</h3>
+<div class="outline-text-3" id="text-1-8">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-9" class="outline-3">
+<h3 id="sec-1-9"><span class="section-number-3">1.9</span> <span class="todo TODO">TODO</span> 宏</h3>
+<div class="outline-text-3" id="text-1-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-10" class="outline-3">
+<h3 id="sec-1-10"><span class="section-number-3">1.10</span> <span class="todo TODO">TODO</span> CLOS对象系统</h3>
+<div class="outline-text-3" id="text-1-10">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-11" class="outline-3">
+<h3 id="sec-1-11"><span class="section-number-3">1.11</span> <span class="todo TODO">TODO</span> 结构</h3>
+<div class="outline-text-3" id="text-1-11">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-12" class="outline-3">
+<h3 id="sec-1-12"><span class="section-number-3">1.12</span> <span class="todo TODO">TODO</span> 包和ASDF</h3>
+<div class="outline-text-3" id="text-1-12">
 
 
 
+
+
+</div>
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">日期: 2013-07-25 06:02:34 PDT</p>
+<p class="date">日期: 2013-07-25 06:15:26 PDT</p>
 <p class="author">作者: Leslie</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
