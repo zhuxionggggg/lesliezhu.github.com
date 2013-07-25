@@ -1,0 +1,53 @@
+** 扯淡(06/11/2013)
+
+   扯淡，又叫扯蛋，俗称扯鸡巴蛋。
+
+   根据百度百科：
+   #+begin_example
+   据考是五四时期。扯蛋原本是民间俚语，市井之言，后被文人借用，却又嫌蛋字不雅，有隐指男人裆下的意思，便自行把蛋字改成
+   了淡字，以示清高，后沿袭下来。 ”事实上，这种说法没有任何历史根据。以“扯淡”二字在古籍电子库当中检索，在明清小说中此
+   二字的用例比比皆是，本词条第一部分所列的几个例子都是17至18世纪的中国作家所使用的“扯淡”一词。相反，“扯蛋”这种粗俗的
+   称呼，倒有可能民间后来的附会和恶搞。
+   #+end_example
+
+   端午假三天，已加班两天；加班倒不要紧，正好郡主身体不方便，却没有假陪陪她；何况今天还是奶奶74岁生日，家人都陪伴在身边，我这个读了
+   点书的，反而不能回去了。
+
+   熊马上要去上海读书了......
+
+   晚上加班回来，10点多下去买水果，自从笔记本改成加州时间后，生物钟已经混乱了。花了35块钱买了一斤樱桃，站在路灯下半个小时，
+   静静的休息下。
+
+   晚上微微的风，细细的雨......
+
+   一个出发点，走上一条未知的路，此刻的驻足，既为回首，亦为将来。
+
+   最近工作不准使用Pyhton、Shel等脚本语言，必须使用自己的编程语言K，引起了一堆人的吐槽。
+
+   感觉工作很累，自己的方法不对？
+
+   感觉工作中可以学的东西就是这些：
+   - 自己的并行数据系统
+   - 自己的并行编程语言
+   - 海外的经验、理念
+   - 金融证券MBS知识
+
+   应该学的就这些，就在这些地方用力，其它的就是扯淡！
+
+
+#+begin_html
+<!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lesliezhu"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';ds.async = true;
+ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+#+end_html

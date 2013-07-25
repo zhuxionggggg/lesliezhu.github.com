@@ -1,0 +1,51 @@
+** 设置ssh-key(01/01/2013)
+
+   我一般更新github上的项目，采用下列过程：
+
+   #+begin_src bash
+   $ mkdir project-dir
+   $ cd project-dir
+   $ git init
+   $ git remote add origin https://github.com/LeslieZhu/Leslie.git
+   $ git pull origin master
+   $ #do something
+   $ git commit -m "reason"
+   $ git push -u origin master （需要输入密码）
+   #+end_src
+
+   在推送更新到github的时候常常因为输入密码而懊恼，今天按照[说明信息](https://help.github.com/articles/generating-ssh-keys)配置
+   了ssh-key，以后就不需要密码了。
+
+   生成公钥:
+
+   #+begin_src bash
+   $ cd ~/.ssh
+   $ ssh-keygen -t rsa -C "your_email@youremail.com"
+   $ xclip -sel clip < ~/.ssh/id_rsa.pub
+   $ ssh -T git@github.com （测试）
+   $ #将id_rsa.pub复制到www.github.com的SSH-KEY
+   #+end_src
+
+   用ssh推送:
+   #+begin_src bash
+   $ git remote add origin git@github.com:LeslieZhu/Leslie.git
+   $ git push -u origin master（不需要输入密码）
+   #+end_src
+
+
+#+begin_html
+<!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lesliezhu"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';ds.async = true;
+ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+#+end_html

@@ -1,0 +1,50 @@
+** 工作与价值(06/11/2013)
+
+   首先我要说我很喜欢现在的工作，但难免有时候要*uck；回到家里，总是会内疚自己又把工作带回家。
+
+   今天发生的一些事情，本来要吐槽一番的，但陪着郡主炒菜后，觉得也没有什麽大不了。以后从办公室出来后，心里就不要装着工作的事情，高兴
+   也好，焦虑也罢。日子总是要过，多陪陪家人才是。
+
+   对于工作，总会处于几个阶段：
+   - 总想好好表现，做事情很积极，也充满好奇，愿意付出，不怕辛苦。
+   - 之前期望可能落地成灰，不再想什麽好好表现，一切不再好奇，总有事情感到抓狂。
+   - 经过了第一年的抱怨，要么找到了自己的位置，要么决定离开了。
+   - 开始教新人要积极、不要抱怨，对于存在的问题要试图改变等等。
+
+   我可能目前处于第二阶段吧，感觉焦虑、抓狂、烦躁，没有找到自己的位置。
+
+   前两天看一微博:
+   #+begin_example
+   辞职后回头看工作，感觉工作就是四个字“晴耕雨读”，好的工作会让你有工作时间，又有时间喂养灵魂，而坏工作只会不停的向你索取，索取。
+   哪怕再饱满的灵魂，在坏工作的压榨中都会干瘪，从一个工匠慢慢变成熟练手艺人，最终变成流水线工人，多么可悲，那些只耕不读的工作。
+   #+end_example
+
+   有人评论:
+   #+begin_example
+   我周围的人中百分之九十的是每天连“耕”都做不完的流水线码农，只有百分之十的人有时间去
+   #+end_example
+
+   我现在就是这90%中的一个碼农，而这份工作似乎也不是”晴耕雨读“的。
+
+   慢慢的发现，其实，一切的焦虑、烦躁、抓狂，都是因为自己没有本事，如果自己不可替代，如果自己高效率，如果自己善于自我管理，如果自己
+   能够独立思考，这些问题还是问题吗？
+
+   找到自己的价值，而不是找到自己的工作。工作之余，应该有自己的爱好，好好工作，好好发展自己的爱好。
+
+#+begin_html
+<!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lesliezhu"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';ds.async = true;
+ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+#+end_html
+   
