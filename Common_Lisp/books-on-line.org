@@ -1,0 +1,16 @@
+* 学习资料和学习计划
+   
+   ANSI Common Lisp 中文版: http://acl.readthedocs.org/en/latest/zhCN/index.html
+
+** TODO 概览
+** TODO 列表(List)操作
+** TODO 数据结构
+** TODO 控制流
+** TODO 函数
+** TODO 输入输出
+** TODO 符号
+** TODO 数字
+** TODO 宏
+** TODO CLOS对象系统
+** TODO 结构
+** TODO 包和ASDF

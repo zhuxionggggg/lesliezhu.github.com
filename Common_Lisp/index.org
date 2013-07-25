@@ -30,9 +30,9 @@
 
 #+TITLE: Common Lisp
 
-
+#+include: "./books-on-line.org"
 #+include: "./install-common-lisp-in-fedora.org"
-
+#+include: "./01-a-note-of-common-lisp.org"
 
 
 

@@ -1,0 +1,167 @@
+* Common Lisp笔记一 : 快速体验
+
+
+   从网站http://www.paulgraham.com/ 可以获取到一些学习资料。
+
+   
+   类似 *(+ 1 2)* 是list形式，第一个是函数，之后的是参数；list可以嵌套；list总是从里到外求值每个list.
+
+   lisp总是试图对list进行求值，如果要当作symbol，使用quote返回list本身，不求值
+   #+begin_src lisp
+   (quote (+ 3 5))
+
+   '(+ 3 5)
+   'ABCD
+   #+end_src
+
+   进入调试模式后，一些命令：
+   #+begin_example
+   :q   
+   :abort   
+   :backtrace
+   #+end_example
+
+
+   *布尔变量* : 当参数是一个list，listp返回True, *AND*, *OR*, *NOT*
+   #+begin_example
+   NIL ---> false
+   T   ---> true
+
+   > (listp '(a b c))
+   T
+   #+end_example
+
+   *cons函数* : 如果第二个变量是list，则返回一个新list，就第一个参数加到第二个列表最前面
+   #+begin_src lisp
+   > (cons 'a '(b c d))
+    (A B C D)
+   #+end_src
+
+   *car* : 返回list第一个元素
+   *cdr* : 返回list第一个元素外剩余部分
+   #+begin_src lisp
+   > (car '(a b c))
+    A
+   > (cdr '(a b c))
+    (B C)
+   #+end_src
+
+   *defun定义函数* :
+   #+begin_src lisp
+   > (defun our-third (x)
+    (car (cdr (cdr x))))
+    OUR-THIRD
+
+   CL-USER> (our-third '(1 2 '(1 2 3) 4 5))
+   '(1 2 3)
+   #+end_src
+
+   input and output: *format函数* 和 *read函数*
+   #+begin_src lisp
+   > (format t "~A plus ~A equals ~A.~%" 2 3 (+ 2 3))
+   2 plus 3 equals 5.
+   NIL
+
+   >(defun askem (string)
+     (format t "~A" string)
+     (read))
+   >(askem "how old are you?")
+    how old are you?30
+    30
+   #+end_src
+
+
+   定义局部变量： *let操作*
+   #+begin_src lisp
+   > (let ((x 1) (y 2))
+    (+ x y))
+   3
+
+  (defun ask-number ()
+  (format t "Please enter a number. ")
+  (let ((val (read)))
+    (if (numberp val)
+        val
+        (ask-number))))
+   #+end_src
+
+   定义全局变量: *defparameter操作* ，全局变量以类似 *variabel-name* 形式
+   #+begin_src lisp
+   > (defparameter *glob* 99)
+   *GLOB*
+
+   > (defconstant limit (+ *glob* 1))
+
+   > (boundp '*glob*)
+   T
+   #+end_src
+
+   变量赋值： *setf*
+   #+begin_src lisp
+   > (setf *glob* 98)
+   98
+   > (let ((n 10))
+    (setf n 2)
+    n)
+   2
+   #+end_src
+
+   迭代:
+   #+begin_src lisp
+   (defun show-squares (start end)
+   (do ((i start (+ i 1)))
+      ((> i end) 'done)
+    (format t "~A ~A~%" i (* i i))))
+   #+end_src
+
+
+   函数 *progn* ：按顺序求值表达式并返回值
+   #+begin_src lisp
+  (defun show-squares (i end)
+  (if (> i end)
+      'done
+      (progn
+        (format t "~A ~A~%" i (* i i))
+        (show-squares (+ i 1) end))))
+   #+end_src
+
+   函数作为对象:
+   #+begin_src lisp
+   > (function +)
+   #<Compiled-Function + 17BA4E>
+
+   CL-USER> (function show-squares)
+   #<FUNCTION SHOW-SQUARES> 
+
+   CL-USER> (apply #'show-squares '(2 5))
+   2 4            
+   3 9           
+   4 16      
+   5 25       
+   DONE 
+
+  CL-USER> (apply #'+ 1 2 '(3 4 5))
+  15 
+
+  (funcall #'+ 1 2 3)
+   #+end_src
+
+   *lambda*:
+   #+begin_src lisp
+   > ((lambda (x) (+ x 100)) 1)
+   101
+
+   CL-USER> (funcall #'(lambda (x) (+ x 100)) 1)
+   101 
+   #+end_src
+
+   *remove* : 去掉列表中nil值
+   #+begin_src lisp
+   CL-USER> (remove nil (list 1 2 3 nil 4 nil))
+   (1 2 3 4)
+
+   CL-USER> (defun summit (lst)                                                                                                         
+              (apply #'+ (remove nil lst)))
+   CL-USER> (summit (list 1 2 3 nil 4 nil))
+   10
+   #+end_src
