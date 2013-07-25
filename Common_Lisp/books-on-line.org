@@ -5,6 +5,7 @@
 ** TODO 概览
 #+include: "./install-common-lisp-in-fedora.org"
 #+include: "./01-a-note-of-common-lisp.org"
+#+include: "./02-a-note-of-common-lisp.org"
 ** TODO 列表(List)操作
 ** TODO 数据结构
 ** TODO 控制流

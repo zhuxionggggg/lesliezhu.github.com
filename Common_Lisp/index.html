@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Common Lisp"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-25 06:15:26 PDT"/>
+<meta name="generated" content="2013-07-25 06:51:10 PDT"/>
 <meta name="author" content="Leslie"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -134,6 +134,7 @@ org_html_manager.setup();  // activate after the parameters are set
 <ul>
 <li><a href="#sec-1-1-1">1.1.1 Fedora 15环境下安装Common Lisp(转载)</a></li>
 <li><a href="#sec-1-1-2">1.1.2 Common Lisp笔记一 : 快速体验</a></li>
+<li><a href="#sec-1-1-3">1.1.3 Common Lisp笔记二 : list操作</a></li>
 </ul>
 </li>
 <li><a href="#sec-1-2">1.2 列表(List)操作</a></li>
@@ -552,6 +553,131 @@ CL-USER&gt; (summit (list 1 2 3 nil 4 nil))
 
 
 </div>
+
+</div>
+
+<div id="outline-container-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Common Lisp笔记二 : list操作</h4>
+<div class="outline-text-4" id="text-1-1-3">
+
+
+<p>
+  List的三个基本操作函数:
+</p><ul>
+<li>cons : 将第一个参数作为第二个参数（list）的第一个元素
+</li>
+<li>car  : 取list第一个元素
+</li>
+<li>cdr  : 去list第一个元素之外的其它元素(以list形式)
+</li>
+</ul>
+
+
+<p>
+  cons 真正所做的事情是，把两个对象结合成一个有两部分的对象，称之为 Cons 对象。
+  概念上来说，一个 Cons 是一对指针；第一个是 car ，第二个是 cdr.
+</p>
+<p>
+  <b>所有不是 Cons 对象的东西，就是一个原子 (atom)</b>.
+</p>
+<p>
+  自定义listp: 判断是否cons对象使用consp
+</p>
+
+
+<pre class="src src-lisp">(<span style="color: #00ffff; font-weight: bold;">defun</span> <span style="color: #0000ff; font-weight: bold;">our-listp</span> (x)
+   (or (null x) (consp x)))
+
+(<span style="color: #00ffff; font-weight: bold;">defun</span> <span style="color: #0000ff; font-weight: bold;">our-atom</span> (x) (not (consp x)))
+</pre>
+
+
+<ul>
+<li>eql 只有在它的参数是相同对象时才返回真.
+</li>
+<li>equal在它的参数打印出的值相同时返回真.
+</li>
+<li>append将任意list拼接起来.
+</li>
+</ul>
+
+
+<p>
+  加载一个lisp程序: <b>load</b>
+</p>
+
+
+<pre class="src src-lisp">(load <span style="color: #00ff00;">"compress.lisp"</span>)
+</pre>
+
+
+<p>
+  nth：获取第n个原子，n=0时是car
+</p>
+
+
+<pre class="src src-lisp">&gt; (nth 0 '(a b c))
+A
+</pre>
+
+
+<p>
+  nthcdr:获取第n个cdr
+</p>
+
+
+<pre class="src src-lisp">&gt; (nthcdr 2 '(a b c))
+(C)
+</pre>
+
+
+<ul>
+<li>zerop:判断是否是0
+</li>
+<li>last: 返回列表的最后一个 Cons 对象
+</li>
+<li>mapcar:接受一个函数以及一个或多个列表，并返回把函数应用至每个列表的元素的结果，直到有的列表没有元素为止
+
+
+
+<pre class="src src-lisp">&gt; (mapcar #'(<span style="color: #00ffff; font-weight: bold;">lambda</span> (x) (+ x 10))
+      '(1 2 3))
+(11 12 13)
+
+&gt; (mapcar #'list
+      '(a b c)
+      '(1 2 3 4))
+((A 1) (B 2) (C 3))
+</pre>
+
+</li>
+<li>maplist:接受同样的参数，将列表的渐进的下一个 cdr 传入函数
+
+
+
+<pre class="src src-lisp">&gt; (maplist #'(<span style="color: #00ffff; font-weight: bold;">lambda</span> (x) x)
+       '(a b c))
+((A B C) (B C) (C))
+</pre>
+
+
+<p>
+   一个copy-tree的实现:
+</p>
+
+
+<pre class="src src-lisp">(<span style="color: #00ffff; font-weight: bold;">defun</span> <span style="color: #0000ff; font-weight: bold;">our-copy-tree</span> (tr)
+   (<span style="color: #00ffff; font-weight: bold;">if</span> (atom tr)
+   tr
+   (cons (our-copy-tree (car tr))
+         (our-copy-tree (cdr tr)))))
+</pre>
+
+</li>
+</ul>
+
+
+</div>
 </div>
 
 </div>
@@ -641,16 +767,13 @@ CL-USER&gt; (summit (list 1 2 3 nil 4 nil))
 <div class="outline-text-3" id="text-1-12">
 
 
-
-
-
 </div>
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">日期: 2013-07-25 06:15:26 PDT</p>
+<p class="date">日期: 2013-07-25 06:51:10 PDT</p>
 <p class="author">作者: Leslie</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
