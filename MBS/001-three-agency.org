@@ -1,0 +1,29 @@
+* 三大机构
+
+  MBS(Mortgage-Backed Security,http://en.wikipedia.org/wiki/Mortgage-backed_security)是最早的资产证券化品种，是资产支持证券ABS
+  的一种，其偿付给投资者的现金流来自于由住房抵押贷款组成的资产池产生的本金和利息。
+
+  最早产生于60年代美国。它主要由美国住房专业银行及储蓄机构利用其贷出的住房抵押贷款，发行的一种资产
+  证券化商品。其基本结构是，把贷出的住房抵押贷款中符合一定条件的贷款集中起来，形成一个抵押贷款的集合体（pool），利用贷款集合体
+  定期发生的本金及利息的现金流入发行证券，并由政府机构或政府背景的金融机构对该证券进行担保。因此，美国的MBS实际上是一种具有浓厚
+  的公共金融政策色彩的证券化商品。
+
+  抵押集合体所产生的本金与利息原封不动地转移支付给MBS的投资者，因此，MBS也被称为过手证券（pass-through securities）。美国的过手
+  抵押证券主要有以下四种：
+  1) 政府国民抵押协会（GNMA）担保的过手证券；\\
+  2) 联邦住宅贷款抵押公司（FHLMC）的参政书；\\
+  3) 联邦国民抵押协会（FNMA）的抵押支持债券；\\
+  4) 民间性质的抵押过手债券。\\
+
+  目前，MBS数据主要来自三家机构，分别是:
+  1) 房利美——FNMA(联邦国民抵押协会):http://www.fanniemae.com/portal/index.html
+  2) 房地美——FHLMC(联邦住宅贷款抵押公司):http://www.freddiemac.com/
+  3) 吉利美——GNMA(政府国民抵押协会):http://www.ginniemae.gov/pages/default.aspx
+
+
+  参考：
+  - 百度百科:http://baike.baidu.com/view/7962434.htm
+  - wiki:http://zh.wikipedia.org/wiki/%E8%B5%84%E4%BA%A7%E8%AF%81%E5%88%B8%E5%8C%96
+  - fnma:http://en.wikipedia.org/wiki/Fannie_Mae
+  - fhlmc:http://en.wikipedia.org/wiki/Freddie_Mac
+  - gnma:http://en.wikipedia.org/wiki/Government_National_Mortgage_Association

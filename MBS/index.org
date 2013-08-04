@@ -15,13 +15,13 @@
 
 #+OPTIONS: H:8
 #+OPTIONS: toc:3
-#+INFOJS_OPT: view:info toc:1
+##+INFOJS_OPT: view:info toc:1
 
 
 #+LINK_UP: http://lesliezhu.github.com/MBS/index.html
 #+LINK_HOME: http://lesliezhu.github.com
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/stylenew.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/main.css" />
 #+LANGUAGE: zh-CN
 
 #+AUTHOR: Leslie
@@ -30,10 +30,9 @@
 
 #+TITLE: MBS
 
-* 前言
-
-  这是一个模板。
-
+#+include: "./001-three-agency.org"
+#+include: "./002-pool.org"
+#+include: "./003-loan.org"
 
 
 
