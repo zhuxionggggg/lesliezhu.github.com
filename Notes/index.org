@@ -13,7 +13,7 @@
 #+OPTIONS: H:8
 #+OPTIONS: toc:2
 #+OPTIONS: num:nil
-#+INFOJS_OPT: view:info toc:2
+#+INFOJS_OPT: view:info toc:1
 
 #+LINK_UP: http://lesliezhu.github.com/Notes/index.html
 #+LINK_HOME: http://lesliezhu.github.com
@@ -25,12 +25,13 @@
 #+EMAIL: pythonisland@gmail.com
 
 
-#+TITLE: Notes
+#+TITLE: 札记
 
 
 
 君子不可以不弘毅，任重而道远！——曾子
 
+##+include: "./201307/2013-07-29-a-java-download-program.org"
 #+include: "./201307/2013-07-14-昨夜雨.org"
 #+include: "./201307/2013-07-10-进击的巨人.org"
 #+include: "./201307/2013-07-08-聪明点儿.org"
