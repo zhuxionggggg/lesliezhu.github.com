@@ -1,4 +1,7 @@
 * Loan
 
+  Loan就是贷款实体个人进行的贷款，就是贷款人和银行签订的一份贷款凭证，就是组成Pool的原子单位. 如果需要查询数据，可以
+  有Pool-By-Pool的形式，也可以有Loan-By-Loan的形式.
+
   参考:
   - http://en.wikipedia.org/wiki/Mortgage_loan

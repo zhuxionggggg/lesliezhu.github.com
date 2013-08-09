@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="MBS"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-08-04 09:31:25 PDT"/>
+<meta name="generated" content="2013-08-08 19:21:40 PDT"/>
 <meta name="author" content="Leslie"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -115,7 +115,10 @@
 <ul>
 <li><a href="#sec-1">1 三大机构</a></li>
 <li><a href="#sec-2">2 Pool</a></li>
-<li><a href="#sec-3">3 Loan</a></li>
+<li><a href="#sec-3">3 WALA/Age</a></li>
+<li><a href="#sec-4">4 MTR(Month-to-Roll,按月轮询)</a></li>
+<li><a href="#sec-5">5 以一个poolno举例</a></li>
+<li><a href="#sec-6">6 Loan</a></li>
 </ul>
 </div>
 </div>
@@ -126,8 +129,12 @@
 
 
 <p>
-  MBS(Mortgage-Backed Security,<a href="http://en.wikipedia.org/wiki/Mortgage-backed_security">http://en.wikipedia.org/wiki/Mortgage-backed_security</a>)是最早的资产证券化品种，是资产支持证券ABS
-  的一种，其偿付给投资者的现金流来自于由住房抵押贷款组成的资产池产生的本金和利息。
+  MBS(Mortgage-Backed Security,<a href="http://en.wikipedia.org/wiki/Mortgage-backed_security">http://en.wikipedia.org/wiki/Mortgage-backed_security</a>)是最早的资产证券化品种，是资产支持证券
+  ABS(Asset Backed Securmeation,资产担保证券)的一种，其偿付给投资者的现金流来自于由住房抵押贷款组成的资产池产生的本金和利息。
+</p>
+<p>
+  资产担保证券，以项目所拥有的资产为融资基础，以项目资产所带来的预期收益为担保，通过在资本市场发现债券来募集资金的一种项目融资
+  凡是，其本质是资产证券化.
 </p>
 <p>
   最早产生于60年代美国。它主要由美国住房专业银行及储蓄机构利用其贷出的住房抵押贷款，发行的一种资产
@@ -188,15 +195,321 @@
 <div class="outline-text-2" id="text-2">
 
 
+<p>  
+  MBS是一个重大发明，极大促进了商品交换；投资人可以买卖标准化的债券，来提高自己的投资回报；而银行则可以将长期按揭从资产负债表去掉，
+  保证银行收益后，将风险和其余收益一并转让出去。
+</p>
+<p>
+  1970年美国吉利美（GNMA）首创世界上第一个按揭抵押债券MBS，将条件非常接近的许多按揭债务集成在一起打包成一个集合体（pool），然后
+  职称成标准凭证，再将这些有按揭债务作为抵押的凭证卖给投资人，债务利息收入与债务风险也同时传递给投资人。后来，房利美（FHLMC）也
+  发行标准化的MBS债券。
+</p>
+<p>
+  Pool是一系列特征相近的贷款的集合，基于这个集合进行标准化（比如设定唯一的cusip等）发行凭证，投资人购买凭证。
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">角色</th><th scope="col" class="left">行为</th><th scope="col" class="left">收益</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">贷款人</td><td class="left">贷款买房</td><td class="left">还房贷（本金+利息）</td></tr>
+<tr><td class="left">银行</td><td class="left">放贷</td><td class="left">手续费A</td></tr>
+<tr><td class="left">FNMA/FHLMC/GNMA</td><td class="left">购买贷款合同，发行pool</td><td class="left">手续费B</td></tr>
+<tr><td class="left">投资人</td><td class="left">购买凭证</td><td class="left">获取手持凭证对应的收益(本金+利息-手续费A-手续费B-手续费N)</td></tr>
+<tr><td class="left">服务机构</td><td class="left">担保等</td><td class="left">手续费C</td></tr>
+<tr><td class="left">&hellip;</td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+
 </div>
 
 </div>
 
 <div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> Loan</h2>
+<h2 id="sec-3"><span class="section-number-2">3</span> WALA/Age</h2>
 <div class="outline-text-2" id="text-3">
 
 
+<p>
+  "The most recent weighted average number of months since the date of note origination, weighted by Current Balance."
+</p>
+<p>
+  一个poolno由多个loan组成，每个loan从发生到现在按月计数，WALA（也叫Age）是根据loan的目前价值金额加权平均计算的来.
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> MTR(Month-to-Roll,按月轮询)</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">Name</th><th scope="col" class="left">Definition</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">Orig</td><td class="left">Initial reset period(时间点). It is the initial reset period, MTR + WALA, at pool issuance.</td></tr>
+<tr><td class="left">Curr</td><td class="left">Current number of months to next reset.</td></tr>
+<tr><td class="left">1st</td><td class="left">Number of months to first reset. It is the Curr MTA for pools before first reset, or zero otherwise.</td></tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> 以一个poolno举例</h2>
+<div class="outline-text-2" id="text-5">
+
+
+<p>
+  poolno 1G2139(poolno是6位，FNMA/FHLMC/GNMA可能会有重复，但cusip是唯一的)符合条件:
+</p><ul>
+<li>是FHLMC ARM 10/1 IO的poolno，即progid in ('FHNLI','FHNTI')
+</li>
+<li>age大于13，等于72
+</li>
+<li>MTR小于0，即没有重置（reset）过,对于这个reset的概念，目前不晓得&hellip;.
+</li>
+</ul>
+
+
+<p>
+  在FHLMC官网查询：<a href="http://www.freddiemac.com/mbs/html/sd_pc_lookup.html">http://www.freddiemac.com/mbs/html/sd_pc_lookup.html</a>， 得到信息:
+</p>
+<ul>
+<li>Issuance时候的信息
+</li>
+<li>Current当前信息
+</li>
+<li>History历史信息
+</li>
+<li>Breakout信息
+</li>
+</ul>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>表1：Issuance, Pool Type: 1-Year LIBOR, Hybrid Initial Interest WAC ARM PC,Payoff Date = 09/15/2013</caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="right" /><col class="left" /><col class="right" />
+</colgroup>
+<tbody>
+<tr><td class="left">Pool Number:</td><td class="left">1G2139</td><td class="left">Cusip Number:</td><td class="right">3128QSLU8</td><td class="left">Issuance UPB:</td><td class="right">$1,973,020.00</td></tr>
+<tr><td class="left">As of Date:</td><td class="left">08/01/2007</td><td class="left">Maturity Date:</td><td class="right">08/01/2037</td><td class="left">Coupon:</td><td class="right">6.23500</td></tr>
+<tr><td class="left">WA Remaining Maturity:</td><td class="left">360</td><td class="left">WA Loan Age:</td><td class="right">0</td><td class="left">WA Coupon:</td><td class="right">6.618</td></tr>
+<tr><td class="left">WA Loan Term:</td><td class="left">0</td><td class="left">WA Months to Amortize:</td><td class="right">121.81</td><td class="left">WA Months To Adjust:</td><td class="right">120.810</td></tr>
+<tr><td class="left">Average Loan Size:</td><td class="left">$0.00</td><td class="left">WA Credit Score:</td><td class="right">742</td><td class="left">WA Loan to Value:</td><td class="right">72</td></tr>
+<tr><td class="left">WA Loan Size:</td><td class="left">$270,158.00</td><td class="left">Credit Score Unknown % UPB:</td><td class="right">0.000</td><td class="left">LTV Unknown % UPB:</td><td class="right">0.000</td></tr>
+<tr><td class="left">TPO%:</td><td class="left">0.000</td><td class="left">WA Debt to Income:</td><td class="right">0</td><td class="left">WA Combined LTV:</td><td class="right">0</td></tr>
+<tr><td class="left">Initial Interest Period:</td><td class="left">10</td><td class="left">Reduced Minimum Servicing Flag (Y/N):</td><td class="right">N</td><td class="left">Prepayment Penalty Mortgage Flag (Y/N):</td><td class="right">N</td></tr>
+<tr><td class="left">Index:</td><td class="left">1 YR LIBOR - WSJ</td><td class="left">Lookback:</td><td class="right">45</td><td class="left">Adjustment Period:</td><td class="right">12</td></tr>
+<tr><td class="left">Next Adjustment Date:</td><td class="left"></td><td class="left">Payment Adjustment Cap:</td><td class="right">0.000</td><td class="left">Periodic Rate Cap:</td><td class="right">2.000</td></tr>
+<tr><td class="left">Initial Fixed Rate Period:</td><td class="left">10</td><td class="left">Initial Cap Up %:</td><td class="right">5.000</td><td class="left">Initial Cap Down %:</td><td class="right">5.000</td></tr>
+<tr><td class="left">Convertible:</td><td class="left">N</td><td class="left">First Conversion Date:</td><td class="right"></td><td class="left">Last Conversion Date:</td><td class="right"></td></tr>
+<tr><td class="left">WA Mort Margin:</td><td class="left">2.250</td><td class="left">WA Mort Life Ceiling (Gross):</td><td class="right">11.618</td><td class="left">WA Mort Life Floor (Gross):</td><td class="right">0.000</td></tr>
+<tr><td class="left">PC Margin:</td><td class="left">1.867</td><td class="left">WA Mort Life Ceiling (Net):</td><td class="right">11.235</td><td class="left">WA Mort Life Floor (Net):</td><td class="right">0.000</td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+  可以看到这个poolno在09/15/2013将payoff，发布时候信息的coupon是6.235，LTV是72.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>表2：Current</caption>
+<colgroup><col class="left" /><col class="right" /><col class="left" /><col class="right" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Payment Date:</td><td class="right">09/15/2013</td><td class="left">Current Factor Date:</td><td class="right">08/01/2013</td><td class="left">Current UPB:                                $0.00</td></tr>
+<tr><td class="left">Payoff Date:</td><td class="right">09/15/2013</td><td class="left">Current Factor:</td><td class="right">0.00000000</td><td class="left">Current Coupon:                            5.74200</td></tr>
+<tr><td class="left">Current WA Remaining Maturity:</td><td class="right">288</td><td class="left">Current WA Loan Age:</td><td class="right">72</td><td class="left"></td></tr>
+<tr><td class="left">Current WA Months To Amortize:</td><td class="right"></td><td class="left">Current WA Months To Adjust:</td><td class="right">0.000</td><td class="left"></td></tr>
+<tr><td class="left">Current WA Credit Score:</td><td class="right">0</td><td class="left">Current WA Loan To Value:</td><td class="right">0</td><td class="left"></td></tr>
+<tr><td class="left">Current Credit Score Unknown % UPB:</td><td class="right">0.000</td><td class="left">Current LTV Unknown % UPB:</td><td class="right">0.000</td><td class="left"></td></tr>
+<tr><td class="left">Current WA Debt To Income:</td><td class="right">0</td><td class="left">Current WA Combined LTV:</td><td class="right">0</td><td class="left"></td></tr>
+<tr><td class="left">Current WA Mort Life Ceiling (Net):</td><td class="right">0.000</td><td class="left">Current WA Mort Life Floor (Net):</td><td class="right">0.000</td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+  最新的factor day是08/01/2013，将在09/15/2013还清，目前的UPB是0，Age/WALA是72，CLTV是0，LTV是0，目前的coupon是5.742.
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>表3：Historical Factors And Coupons</caption>
+<colgroup><col class="left" /><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Factor Date</td><td class="right">Factor</td><td class="right">Prepayment Penalty Factor</td><td class="right">Coupon</td><td class="right">Neg Am Factor</td><td class="left">1984 Tax Flag?</td><td class="left">1985 Tax Flag?</td></tr>
+<tr><td class="left">08/01/2013</td><td class="right">0.00000000</td><td class="right">0.00000000</td><td class="right">5.74200</td><td class="right">0.00000000</td><td class="left">Y</td><td class="left">Y</td></tr>
+<tr><td class="left">07/01/2013</td><td class="right">0.05068372</td><td class="right">0.00000000</td><td class="right">5.74200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">06/01/2013</td><td class="right">0.05068372</td><td class="right">0.00000000</td><td class="right">5.74200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">05/01/2013</td><td class="right">0.05068372</td><td class="right">0.00000000</td><td class="right">5.74200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">04/01/2013</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">03/01/2013</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">02/01/2013</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">01/01/2013</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">12/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">11/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">10/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">09/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">08/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">07/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">06/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">05/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">04/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">03/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">02/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">01/01/2012</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">12/01/2011</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">11/01/2011</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">10/01/2011</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">09/01/2011</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">08/01/2011</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">07/01/2011</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">06/01/2011</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">05/01/2011</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">04/01/2011</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+<tr><td class="left">03/01/2011</td><td class="right">0.18111764</td><td class="right">0.00000000</td><td class="right">6.10200</td><td class="right">0.00000000</td><td class="left">N</td><td class="left">N</td></tr>
+</tbody>
+</table>
+
+
+<p>
+  这里可以看到coupon在过程中进行了改变。
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>表4：Breakout Information &ndash; Loan Purpose</caption>
+<colgroup><col class="left" /><col class="right" /><col class="right" />
+</colgroup>
+<tbody>
+<tr><td class="left">Breakout Description</td><td class="right">Issuance</td><td class="right">Current</td></tr>
+<tr><td class="left">Purchase % of Loans:</td><td class="right">50.000</td><td class="right">0.000</td></tr>
+<tr><td class="left">Cash-Out Refinance % UPB:</td><td class="right">0.000</td><td class="right">0.000</td></tr>
+<tr><td class="left">Cash-Out Refinance # of Loans:</td><td class="right">0</td><td class="right">0</td></tr>
+<tr><td class="left">Cash-Out Refinance % of Loans:</td><td class="right">0.000</td><td class="right">0.000</td></tr>
+<tr><td class="left">No Cash-Out Refinance % UPB:</td><td class="right">0.000</td><td class="right">0.000</td></tr>
+<tr><td class="left">No Cash-Out Refinance # of Loans:</td><td class="right">0</td><td class="right">0</td></tr>
+<tr><td class="left">No Cash-Out Refinance % of Loans:</td><td class="right">0.000</td><td class="right">0.000</td></tr>
+<tr><td class="left">Refinance - Not Specified % UPB:</td><td class="right">53.120</td><td class="right">0.000</td></tr>
+<tr><td class="left">Refinance - Not Specified # of Loans:</td><td class="right">4</td><td class="right">0</td></tr>
+<tr><td class="left">Refinance - Not Specified % of Loans:</td><td class="right">50.000</td><td class="right">0.000</td></tr>
+<tr><td class="left">Modified - Loss Mitigation % UPB:</td><td class="right">0.000</td><td class="right">0.000</td></tr>
+<tr><td class="left">Modified - Loss Mitigation # of Loans:</td><td class="right">0</td><td class="right">0</td></tr>
+<tr><td class="left">Modified - Loss Mitigation % of Loans:</td><td class="right">0.000</td><td class="right">0.000</td></tr>
+<tr><td class="left">Unknown % UPB:</td><td class="right">0.000</td><td class="right">0.000</td></tr>
+<tr><td class="left">Unknown # of Loans:</td><td class="right">0</td><td class="right">0</td></tr>
+<tr><td class="left">Unknown % of Loans:</td><td class="right">0.000</td><td class="right">0.000</td></tr>
+</tbody>
+</table>
+
+
+
+
+<p>
+  这里可以看到，这个poolno中4个loan做了Refinance，其中53%是做了Refinance，50%是真正买房的。
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>表5： Number of Units</caption>
+<colgroup><col class="left" /><col class="right" /><col class="right" />
+</colgroup>
+<tbody>
+<tr><td class="left">Breakout Description</td><td class="right">Issuance</td><td class="right">Current</td></tr>
+<tr><td class="left">1 Unit % UPB:</td><td class="right">100.00</td><td class="right">00.000</td></tr>
+<tr><td class="left">1 Unit # of Loans:</td><td class="right">8</td><td class="right">0</td></tr>
+<tr><td class="left">1 Unit % of Loans:</td><td class="right">100.00</td><td class="right">00.000</td></tr>
+<tr><td class="left">2-4 Unit % UPB:</td><td class="right">0.00</td><td class="right">00.000</td></tr>
+<tr><td class="left">2-4 Unit # of Loans:</td><td class="right">0</td><td class="right">0</td></tr>
+<tr><td class="left">2-4 Unit % of Loans:</td><td class="right">0.00</td><td class="right">00.000</td></tr>
+<tr><td class="left">Unknown % UPB:</td><td class="right">0.00</td><td class="right">00.000</td></tr>
+<tr><td class="left">Unknown # of Loans:</td><td class="right">0</td><td class="right">0</td></tr>
+<tr><td class="left">Unknown % of Loans:</td><td class="right">0.00</td><td class="right">00.000</td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+  NUMBER OF UNITS – Denotes whether the mortgage is a one-, two-, three-, or four-unit property.
+</p>
+<p>
+  这是可以看到这8个loan都是买的1单元房屋，没有多单元的房屋。
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>表6：Occupancy Status</caption>
+<colgroup><col class="left" /><col class="right" /><col class="right" />
+</colgroup>
+<tbody>
+<tr><td class="left">Breakout Description</td><td class="right">Issuance</td><td class="right">Current</td></tr>
+<tr><td class="left">Owner Occupied % UPB:</td><td class="right">87.63</td><td class="right">00.000</td></tr>
+<tr><td class="left">Owner Occupied # of Loans:</td><td class="right">7</td><td class="right">0</td></tr>
+<tr><td class="left">Owner Occupied % of Loans:</td><td class="right">87.50</td><td class="right">00.000</td></tr>
+<tr><td class="left">Second Home % UPB:</td><td class="right">12.37</td><td class="right">00.000</td></tr>
+<tr><td class="left">Second Home # of Loans:</td><td class="right">1</td><td class="right">0</td></tr>
+<tr><td class="left">Second Home % of Loans:</td><td class="right">12.50</td><td class="right">00.000</td></tr>
+<tr><td class="left">Investment Property % UPB:</td><td class="right">0.00</td><td class="right">00.000</td></tr>
+<tr><td class="left">Investment Property # of Loans:</td><td class="right">0</td><td class="right">0</td></tr>
+<tr><td class="left">Investment Property % of Loans:</td><td class="right">0.00</td><td class="right">00.000</td></tr>
+<tr><td class="left">Unknown % UPB:</td><td class="right">0.00</td><td class="right">00.000</td></tr>
+<tr><td class="left">Unknown # of Loans:</td><td class="right">0</td><td class="right">0</td></tr>
+<tr><td class="left">Unknown % of Loans:</td><td class="right">0.00</td><td class="right">00.000</td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+  这里可以看到，12.37% UPB属于买第二套房进行的贷款,1个loan，另外7个loan是买第一套房子，占87.63%。
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption>表7：Initial Interest First P&amp;I Payment (Updated on a monthly basis)</caption>
+<colgroup><col class="left" /><col class="left" /><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" /><col class="right" />
+</colgroup>
+<tbody>
+<tr><td class="left">Initial Interest FirstPaymentDate</td><td class="left">UPB</td><td class="right">%UPB</td><td class="right"># of Loans</td><td class="right">% # of Loans</td><td class="right">WARM</td><td class="right">Remaining Maturity High</td><td class="right">Remaining Maturity Low</td><td class="right">WALA</td><td class="right">Loan Age High</td><td class="right">Loan Age Low</td></tr>
+<tr><td class="left">09/01/2017</td><td class="left">$359,000.00</td><td class="right">18.200</td><td class="right">2</td><td class="right">25.000</td><td class="right">359</td><td class="right">359</td><td class="right">359</td><td class="right">1</td><td class="right">1</td><td class="right">1</td></tr>
+<tr><td class="left">10/01/2017</td><td class="left">$1,614,020.00</td><td class="right">81.800</td><td class="right">6</td><td class="right">75.000</td><td class="right">360</td><td class="right">360</td><td class="right">360</td><td class="right">0</td><td class="right">0</td><td class="right">0</td></tr>
+</tbody>
+</table>
+
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Loan</h2>
+<div class="outline-text-2" id="text-6">
+
+
+<p>
+  Loan就是贷款实体个人进行的贷款，就是贷款人和银行签订的一份贷款凭证，就是组成Pool的原子单位. 如果需要查询数据，可以
+  有Pool-By-Pool的形式，也可以有Loan-By-Loan的形式.
+</p>
 <p>
   参考:
 </p><ul>
@@ -213,7 +526,7 @@
 </div>
 
 <div id="postamble">
-<p class="date">日期: 2013-08-04 09:31:25 PDT</p>
+<p class="date">日期: 2013-08-08 19:21:40 PDT</p>
 <p class="author">作者: Leslie</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

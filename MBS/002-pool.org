@@ -1,1 +1,191 @@
 * Pool
+  
+  MBS是一个重大发明，极大促进了商品交换；投资人可以买卖标准化的债券，来提高自己的投资回报；而银行则可以将长期按揭从资产负债表去掉，
+  保证银行收益后，将风险和其余收益一并转让出去。
+
+  1970年美国吉利美（GNMA）首创世界上第一个按揭抵押债券MBS，将条件非常接近的许多按揭债务集成在一起打包成一个集合体（pool），然后
+  职称成标准凭证，再将这些有按揭债务作为抵押的凭证卖给投资人，债务利息收入与债务风险也同时传递给投资人。后来，房利美（FHLMC）也
+  发行标准化的MBS债券。
+
+  Pool是一系列特征相近的贷款的集合，基于这个集合进行标准化（比如设定唯一的cusip等）发行凭证，投资人购买凭证。
+
+  | 角色            | 行为                   | 收益                                                      |
+  |-----------------+------------------------+-----------------------------------------------------------|
+  | 贷款人          | 贷款买房               | 还房贷（本金+利息）                                       |
+  | 银行            | 放贷                   | 手续费A                                                   |
+  | FNMA/FHLMC/GNMA | 购买贷款合同，发行pool | 手续费B                                                   |
+  | 投资人          | 购买凭证               | 获取手持凭证对应的收益(本金+利息-手续费A-手续费B-手续费N) |
+  | 服务机构        | 担保等                 | 手续费C                                                   |
+  | ...             |                        |                                                           |
+
+
+* WALA/Age
+
+  "The most recent weighted average number of months since the date of note origination, weighted by Current Balance."
+
+  一个poolno由多个loan组成，每个loan从发生到现在按月计数，WALA（也叫Age）是根据loan的目前价值金额加权平均计算的来.
+
+
+* MTR(Month-to-Roll,按月轮询)
+
+  | Name | Definition                                                                                           |
+  |------+------------------------------------------------------------------------------------------------------|
+  | Orig | Initial reset period(时间点). It is the initial reset period, MTR + WALA, at pool issuance.          |
+  | Curr | Current number of months to next reset.                                                              |
+  | 1st  | Number of months to first reset. It is the Curr MTA for pools before first reset, or zero otherwise. |
+
+
+  
+*  以一个poolno举例
+
+  poolno 1G2139(poolno是6位，FNMA/FHLMC/GNMA可能会有重复，但cusip是唯一的)符合条件:
+  - 是FHLMC ARM 10/1 IO的poolno，即progid in ('FHNLI','FHNTI')
+  - age大于13，等于72
+  - MTR小于0，即没有重置（reset）过,对于这个reset的概念，目前不晓得....
+
+  在FHLMC官网查询：http://www.freddiemac.com/mbs/html/sd_pc_lookup.html， 得到信息:
+
+  - Issuance时候的信息
+  - Current当前信息
+  - History历史信息
+  - Breakout信息
+
+  #+CAPTION: 表1：Issuance, Pool Type: 1-Year LIBOR, Hybrid Initial Interest WAC ARM PC,Payoff Date = 09/15/2013
+  |----------------------------+------------------+---------------------------------------+------------+-----------------------------------------+---------------|
+  | Pool Number:               |           1G2139 | Cusip Number:                         |  3128QSLU8 | Issuance UPB:                           | $1,973,020.00 |
+  | As of Date:                |       08/01/2007 | Maturity Date:                        | 08/01/2037 | Coupon:                                 |       6.23500 |
+  | WA Remaining Maturity:     |              360 | WA Loan Age:                          |          0 | WA Coupon:                              |         6.618 |
+  | WA Loan Term:              |                0 | WA Months to Amortize:                |     121.81 | WA Months To Adjust:                    |       120.810 |
+  | Average Loan Size:         |            $0.00 | WA Credit Score:                      |        742 | WA Loan to Value:                       |            72 |
+  | WA Loan Size:              |      $270,158.00 | Credit Score Unknown % UPB:           |      0.000 | LTV Unknown % UPB:                      |         0.000 |
+  | TPO%:                      |            0.000 | WA Debt to Income:                    |          0 | WA Combined LTV:                        |             0 |
+  | Initial Interest Period:   |               10 | Reduced Minimum Servicing Flag (Y/N): |          N | Prepayment Penalty Mortgage Flag (Y/N): |             N |
+  | Index:                     | 1 YR LIBOR - WSJ | Lookback:                             |         45 | Adjustment Period:                      |            12 |
+  | Next Adjustment Date:      |                  | Payment Adjustment Cap:               |      0.000 | Periodic Rate Cap:                      |         2.000 |
+  | Initial Fixed Rate Period: |               10 | Initial Cap Up %:                     |      5.000 | Initial Cap Down %:                     |         5.000 |
+  | Convertible:               |                N | First Conversion Date:                |            | Last Conversion Date:                   |               |
+  | WA Mort Margin:            |            2.250 | WA Mort Life Ceiling (Gross):         |     11.618 | WA Mort Life Floor (Gross):             |         0.000 |
+  | PC Margin:                 |            1.867 | WA Mort Life Ceiling (Net):           |     11.235 | WA Mort Life Floor (Net):               |         0.000 |
+
+
+  可以看到这个poolno在09/15/2013将payoff，发布时候信息的coupon是6.235，LTV是72.
+  
+  #+CAPTION: 表2：Current
+  |----------------------------------------------------+------------+-----------------------------------+------------+----------------------------------------------------|
+  | Payment Date:                                      | 09/15/2013 | Current Factor Date:              | 08/01/2013 | Current UPB:                                $0.00  |
+  | Payoff Date:                                       | 09/15/2013 | Current Factor:                   | 0.00000000 | Current Coupon:                            5.74200 |
+  | Current WA Remaining Maturity:                     |        288 | Current WA Loan Age:              |         72 |                                                    |
+  | Current WA Months To Amortize:                     |            | Current WA Months To Adjust:      |      0.000 |                                                    |
+  | Current WA Credit Score:                           |          0 | Current WA Loan To Value:         |          0 |                                                    |
+  | Current Credit Score Unknown % UPB:                |      0.000 | Current LTV Unknown % UPB:        |      0.000 |                                                    |
+  | Current WA Debt To Income:                         |          0 | Current WA Combined LTV:          |          0 |                                                    |
+  | Current WA Mort Life Ceiling (Net):                |      0.000 | Current WA Mort Life Floor (Net): |      0.000 |                                                    |
+
+
+  最新的factor day是08/01/2013，将在09/15/2013还清，目前的UPB是0，Age/WALA是72，CLTV是0，LTV是0，目前的coupon是5.742.
+
+
+  
+  #+CAPTION: 表3：Historical Factors And Coupons 
+  |-------------+------------+---------------------------+---------+---------------+----------------+----------------|
+  | Factor Date |     Factor | Prepayment Penalty Factor |  Coupon | Neg Am Factor | 1984 Tax Flag? | 1985 Tax Flag? |
+  | 08/01/2013  | 0.00000000 |                0.00000000 | 5.74200 |    0.00000000 | Y              | Y              |
+  | 07/01/2013  | 0.05068372 |                0.00000000 | 5.74200 |    0.00000000 | N              | N              |
+  | 06/01/2013  | 0.05068372 |                0.00000000 | 5.74200 |    0.00000000 | N              | N              |
+  | 05/01/2013  | 0.05068372 |                0.00000000 | 5.74200 |    0.00000000 | N              | N              |
+  | 04/01/2013  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 03/01/2013  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 02/01/2013  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 01/01/2013  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 12/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 11/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 10/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 09/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 08/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 07/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 06/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 05/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 04/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 03/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 02/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 01/01/2012  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 12/01/2011  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 11/01/2011  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 10/01/2011  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 09/01/2011  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 08/01/2011  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 07/01/2011  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 06/01/2011  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 05/01/2011  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 04/01/2011  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+  | 03/01/2011  | 0.18111764 |                0.00000000 | 6.10200 |    0.00000000 | N              | N              |
+
+  这里可以看到coupon在过程中进行了改变。
+
+  #+CAPTION: 表4：Breakout Information -- Loan Purpose 
+  | Breakout Description                   | Issuance | Current |
+  | Purchase % of Loans:                   |   50.000 |   0.000 |
+  | Cash-Out Refinance % UPB:              |    0.000 |   0.000 |
+  | Cash-Out Refinance # of Loans:         |        0 |       0 |
+  | Cash-Out Refinance % of Loans:         |    0.000 |   0.000 |
+  | No Cash-Out Refinance % UPB:           |    0.000 |   0.000 |
+  | No Cash-Out Refinance # of Loans:      |        0 |       0 |
+  | No Cash-Out Refinance % of Loans:      |    0.000 |   0.000 |
+  | Refinance - Not Specified % UPB:       |   53.120 |   0.000 |
+  | Refinance - Not Specified # of Loans:  |        4 |       0 |
+  | Refinance - Not Specified % of Loans:  |   50.000 |   0.000 |
+  | Modified - Loss Mitigation % UPB:      |    0.000 |   0.000 |
+  | Modified - Loss Mitigation # of Loans: |        0 |       0 |
+  | Modified - Loss Mitigation % of Loans: |    0.000 |   0.000 |
+  | Unknown % UPB:                         |    0.000 |   0.000 |
+  | Unknown # of Loans:                    |        0 |       0 |
+  | Unknown % of Loans:                    |    0.000 |   0.000 |
+
+
+
+  这里可以看到，这个poolno中4个loan做了Refinance，其中53%是做了Refinance，50%是真正买房的。
+
+  #+CAPTION:  表5： Number of Units
+  | Breakout Description | Issuance | Current |
+  | 1 Unit % UPB:        |   100.00 |  00.000 |
+  | 1 Unit # of Loans:   |        8 |       0 |
+  | 1 Unit % of Loans:   |   100.00 |  00.000 |
+  | 2-4 Unit % UPB:      |     0.00 |  00.000 |
+  | 2-4 Unit # of Loans: |        0 |       0 |
+  | 2-4 Unit % of Loans: |     0.00 |  00.000 |
+  | Unknown % UPB:       |     0.00 |  00.000 |
+  | Unknown # of Loans:  |        0 |       0 |
+  | Unknown % of Loans:  |     0.00 |  00.000 |
+
+
+  NUMBER OF UNITS – Denotes whether the mortgage is a one-, two-, three-, or four-unit property.
+
+  这是可以看到这8个loan都是买的1单元房屋，没有多单元的房屋。
+
+
+  
+  #+CAPTION:  表6：Occupancy Status
+  | Breakout Description            | Issuance | Current |
+  | Owner Occupied % UPB:           |    87.63 |  00.000 |
+  | Owner Occupied # of Loans:      |        7 |       0 |
+  | Owner Occupied % of Loans:      |    87.50 |  00.000 |
+  | Second Home % UPB:              |    12.37 |  00.000 |
+  | Second Home # of Loans:         |        1 |       0 |
+  | Second Home % of Loans:         |    12.50 |  00.000 |
+  | Investment Property % UPB:      |     0.00 |  00.000 |
+  | Investment Property # of Loans: |        0 |       0 |
+  | Investment Property % of Loans: |     0.00 |  00.000 |
+  | Unknown % UPB:                  |     0.00 |  00.000 |
+  | Unknown # of Loans:             |        0 |       0 |
+  | Unknown % of Loans:             |     0.00 |  00.000 |
+
+
+  这里可以看到，12.37% UPB属于买第二套房进行的贷款,1个loan，另外7个loan是买第一套房子，占87.63%。
+
+  #+CAPTION:  表7：Initial Interest First P&I Payment (Updated on a monthly basis)
+   | Initial Interest FirstPaymentDate | UPB           |   %UPB | # of Loans | % # of Loans | WARM | Remaining Maturity High | Remaining Maturity Low | WALA | Loan Age High | Loan Age Low |
+   | 09/01/2017                        | $359,000.00   | 18.200 |          2 |       25.000 |  359 |                     359 |                    359 |    1 |             1 |            1 |
+   | 10/01/2017                        | $1,614,020.00 | 81.800 |          6 |       75.000 |  360 |                     360 |                    360 |    0 |             0 |            0 |
+
+
+

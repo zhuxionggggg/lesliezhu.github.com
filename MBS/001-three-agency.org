@@ -1,7 +1,10 @@
 * 三大机构
 
-  MBS(Mortgage-Backed Security,http://en.wikipedia.org/wiki/Mortgage-backed_security)是最早的资产证券化品种，是资产支持证券ABS
-  的一种，其偿付给投资者的现金流来自于由住房抵押贷款组成的资产池产生的本金和利息。
+  MBS(Mortgage-Backed Security,http://en.wikipedia.org/wiki/Mortgage-backed_security)是最早的资产证券化品种，是资产支持证券
+  ABS(Asset Backed Securmeation,资产担保证券)的一种，其偿付给投资者的现金流来自于由住房抵押贷款组成的资产池产生的本金和利息。
+
+  资产担保证券，以项目所拥有的资产为融资基础，以项目资产所带来的预期收益为担保，通过在资本市场发现债券来募集资金的一种项目融资
+  凡是，其本质是资产证券化.
 
   最早产生于60年代美国。它主要由美国住房专业银行及储蓄机构利用其贷出的住房抵押贷款，发行的一种资产
   证券化商品。其基本结构是，把贷出的住房抵押贷款中符合一定条件的贷款集中起来，形成一个抵押贷款的集合体（pool），利用贷款集合体
