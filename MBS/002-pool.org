@@ -32,7 +32,15 @@
   |------+------------------------------------------------------------------------------------------------------|
   | Orig | Initial reset period(时间点). It is the initial reset period, MTR + WALA, at pool issuance.          |
   | Curr | Current number of months to next reset.                                                              |
-  | 1st  | Number of months to first reset. It is the Curr MTA for pools before first reset, or zero otherwise. |
+  | 1st  | Number of months to first reset. It is the Curr MTR for pools before first reset, or zero otherwise. |
+
+  有一类贷款是混合型的，比如5/1表示前5年是固定利率（fix），5年之后是浮动利率（arm），这个MTR就是用来记录这个信息。
+
+  - orig是当初贷款时候规定的固定利率是多久，这里是5*12=60个月；
+  - curr是还有多少个月是固定利率的，比如1年后，就是4*12=48个月；
+  - 1st是离第一次reset利率还有多久，和curr是一样的，当5年过去后，1st应该是0了。
+
+  购买证券的人关心这个信息，如果是5/1的，已经过去4年了，买了这个证券后1年后就可以改变利率，则获取的利息就变少了。
 
 
   
