@@ -1,0 +1,33 @@
+* 坚持(08/12/2013)
+
+  过两天就要送郡主回家休息了，但我还是需要熬夜工作，倒不是工作做不完； 这一年来，忙活了不少事情，大部分都是应酬，所以也没有多少收获。
+  
+  我太懒了，懒于做家务，懒于学习；同时，也没有什麽节制，自然不会有什麽成就。工作也不顺心，因此我花了很多事情懊悔。
+
+  今天看到一句话：
+  #+begin_example
+  回想起自己 2003 年首次接触 Common Lisp 时的那种无知、无助和痛苦的学习经历：当时我艰难地啃《Common Lisp: the Language》
+  (2nd edition)，一开始甚至不敢相信自己是在学一门编程语言，而且在看完 500 页以后连一个 hello world 都写不出来（因为输入/输出在
+  几乎最后才讲到），但就是这样坚持地看完了 1300 页的全书，结果一下子突然理解了整个语言。当今那些投机取巧的 Lisp 学习者们无法
+  忍受这种痛苦，所以只能从相对友好的入门教程开始学起，但这样就看不清整个语言的结构，长远来讲有害。
+  #+end_example
+
+  这段话深深触动了我...
+
+#+begin_html
+<!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lesliezhu"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';ds.async = true;
+ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+#+end_html
+  

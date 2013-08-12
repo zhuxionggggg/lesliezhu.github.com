@@ -32,6 +32,7 @@
 君子不可以不弘毅，任重而道远！——曾子
 
 ##+include: "./201307/2013-07-29-a-java-download-program.org"
+#+include: "./201308/2013-08-12-common-lisp.org"
 #+include: "./201307/2013-07-14-昨夜雨.org"
 #+include: "./201307/2013-07-10-进击的巨人.org"
 #+include: "./201307/2013-07-08-聪明点儿.org"
