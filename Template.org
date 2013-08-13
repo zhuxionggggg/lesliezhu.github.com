@@ -19,7 +19,7 @@
 #+LINK_UP: http://lesliezhu.github.com
 #+LINK_HOME: http://lesliezhu.github.com
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/stylenew.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/main.css" />
 #+LANGUAGE: zh-CN
 
 #+AUTHOR: Leslie
