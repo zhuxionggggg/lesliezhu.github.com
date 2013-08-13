@@ -13,13 +13,13 @@
 
 #+OPTIONS: H:8
 #+OPTIONS: toc:3
-#+INFOJS_OPT: view:info toc:1
+##+INFOJS_OPT: view:info toc:1
 
 
 #+LINK_UP: http://lesliezhu.github.com
 #+LINK_HOME: http://lesliezhu.github.com
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/stylenew.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/main.css" />
 #+LANGUAGE: zh-CN
 
 #+AUTHOR: Leslie
@@ -48,6 +48,7 @@
 \usepackage{hyperref}
 \tolerance=1000
 
+%begin
 
 
 \usepackage{xltxtra}
@@ -73,6 +74,9 @@
 \lstset{language=C++}
 \lstset{breaklines}
 \lstset{extendedchars=false}  %source code box
+
+
+%end
 
 \providecommand{\alert}[1]{\textbf{#1}}
 
