@@ -1,4 +1,4 @@
-**  201307 Monthly Factor Day(03/07/2013)
+*  201307 Monthly Factor Day(03/07/2013)
 
     Cpr1=(1-(CBal/SBal)^12)
     CBal=OBal*Factor

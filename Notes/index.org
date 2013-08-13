@@ -18,18 +18,16 @@
 #+LINK_UP: http://lesliezhu.github.com/Notes/index.html
 #+LINK_HOME: http://lesliezhu.github.com
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="../stylesheets/stylenew.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="../stylesheets/main.css" />
 #+LANGUAGE: zh-CN
 
 #+AUTHOR: Leslie
 #+EMAIL: pythonisland@gmail.com
 
 
-#+TITLE: 札记
+#+TITLE: 日志
 
 
-
-君子不可以不弘毅，任重而道远！——曾子
 
 ##+include: "./201307/2013-07-29-a-java-download-program.org"
 #+include: "./201308/2013-08-12-common-lisp.org"

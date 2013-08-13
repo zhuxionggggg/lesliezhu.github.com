@@ -1,4 +1,4 @@
-** FactorDay简记(01/09/2013)
+* FactorDay简记(01/09/2013)
 
 
    平时客户只能查看到SBal，基于公式``CBal=SBal*Factor``，所以每个月第4个工作日就叫Factor Day；因为公布了Factor后，就可以知道CBal

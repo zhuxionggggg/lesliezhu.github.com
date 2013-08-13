@@ -1,0 +1,107 @@
+* 一个Java下载zip文件的程序(07/29/2013)
+
+   今天要写一个Java程序，边下载zip文件边解压，同时网站是需要用户和密码的.
+
+   打算再用Python实现一遍，看代码量能减少多少.
+
+#+begin_src java
+import java.io.*;
+import java.util.zip.*;
+import java.net.*;
+
+public class ZipStream{
+	static int buffer = 6 * 1024;
+	static String fileName;
+	static String urlString;
+	static boolean strideFlag = false;
+
+    static final String kuser = "username";
+    static final String kpass = "passwd";
+
+    static class MyAuthenticator extends Authenticator {
+        public PasswordAuthentication getPasswordAuthentication() {
+            System.err.println("Feeding username and password for " + getRequestingScheme());
+            return (new PasswordAuthentication(kuser, kpass.toCharArray()));
+        }
+    }
+
+	public static void main(String[] args){
+		if(args.length < 4){
+			printUsage();
+			System.exit(0);
+		} else {
+			for(int i=0; i < args.length; i++){
+				if(args[i].equals("-u")){
+					try{
+						urlString = args[i+1];
+					}
+					catch(Exception e){
+						printUsage();
+						System.exit(0);
+					}
+				}
+				if(args[i].equals("-f")){
+					try{
+						fileName = args[i+1];
+					}
+					catch(Exception e){
+						printUsage();
+						System.exit(0);
+					}
+				}
+				if(args[i].equals("-s")){
+					try{
+						buffer = Integer.parseInt(args[i+1]);
+						strideFlag = true;
+					}
+					catch(Exception e){
+						printUsage();
+						System.exit(0);
+					}
+				}
+			}
+		}
+
+		extractFile();
+	}
+    
+	private static void extractFile(){
+		try{
+			int count = 0;
+			byte[] data = null;
+            
+
+            Authenticator.setDefault(new MyAuthenticator());
+
+			URL url = new URL(urlString);
+			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+
+			conn.setDoOutput(true);
+			conn.setDoInput(true);
+			conn.setUseCaches(false);
+			BufferedInputStream bis = new BufferedInputStream(conn.getInputStream());
+			ZipInputStream zis = new ZipInputStream(bis);
+			ZipEntry entry;
+			while((entry = zis.getNextEntry()) != null){
+				if(entry.getName().equals(fileName)){
+					data = new byte[buffer];
+					while ((count = zis.read(data, 0, buffer)) != -1) {
+               			System.out.write(data, 0, count);
+               			if(strideFlag)	System.out.write('\n');
+            		}
+				}
+			}
+			zis.close();
+			bis.close();
+			conn.disconnect();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+    
+	public static void printUsage(){
+		System.out.println("Usage: java -u url -f filename -s stride  > output.txt 2> output.err");
+	}
+}
+#+end_src

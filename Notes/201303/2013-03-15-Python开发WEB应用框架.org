@@ -1,4 +1,4 @@
-** Python开发WEB的框架(03/15/2013)
+* Python开发WEB的框架(03/15/2013)
 
    Ruby是Rails一枝独秀，Python却是各种框架百花齐放。
 
