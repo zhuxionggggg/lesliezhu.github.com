@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+<title>《Common Lisp: Second Edition》笔记</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="《Common Lisp: Second Edition》笔记"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-08-14 06:45:20 PDT"/>
+<meta name="author" content="Leslie"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/main.css" />
+<script type="text/javascript" src="http://orgmode.org/org-info.js"></script>
+<script type="text/javascript" >
+<!--/*--><![CDATA[/*><!--*/
+org_html_manager.set("TOC_DEPTH", "2");
+org_html_manager.set("LINK_HOME", "http://lesliezhu.github.com");
+org_html_manager.set("LINK_UP", "./Book-common-lisp-2-edition.html");
+org_html_manager.set("LOCAL_TOC", "1");
+org_html_manager.set("VIEW_BUTTONS", "0");
+org_html_manager.set("MOUSE_HINT", "underline");
+org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("TOC", "1");
+org_html_manager.set("VIEW", "info");
+org_html_manager.setup();  // activate after the parameters are set
+/*]]>*///-->
+</script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">《Common Lisp: Second Edition》笔记</h1>
+
+
+
+
+
+
+
+
+
+
+
+<div id="table-of-contents">
+<h2>目录</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">第一章：Preface</a></li>
+<li><a href="#sec-2">第二章：Introduction</a></li>
+<li><a href="#sec-3">第三章：Data Types</a></li>
+<li><a href="#sec-4">第四章：Scope and Extent</a></li>
+<li><a href="#sec-5">第五章：Type Specifiers</a></li>
+<li><a href="#sec-6">第六章：Program Structure</a></li>
+<li><a href="#sec-7">第七章：Predicates</a></li>
+<li><a href="#sec-8">第八章：Control Structure</a></li>
+<li><a href="#sec-9">第九章：Macros</a></li>
+<li><a href="#sec-10">第十章：Declarations</a></li>
+<li><a href="#sec-11">第十一章：Symbols</a></li>
+<li><a href="#sec-12">第十二章：Packages</a></li>
+<li><a href="#sec-13">第十三章：Numbers</a></li>
+<li><a href="#sec-14">第十四章：Characters</a></li>
+<li><a href="#sec-15">第十五章：Sequences</a></li>
+<li><a href="#sec-16">第十六章：Lists</a></li>
+<li><a href="#sec-17">第十七章：Hash Tables</a></li>
+<li><a href="#sec-18">第十八章：Arrays</a></li>
+<li><a href="#sec-19">第十九章：Strings</a></li>
+<li><a href="#sec-20">第二十章：Structures</a></li>
+<li><a href="#sec-21">第二十一章：The Evaluator</a></li>
+<li><a href="#sec-22">第二十二章：Streams</a></li>
+<li><a href="#sec-23">第二十三章：Input/Output</a></li>
+<li><a href="#sec-24">第二十四章：File System Interface</a></li>
+<li><a href="#sec-25">第二十五章：Errors</a></li>
+<li><a href="#sec-26">第二十六章：Miscellanceous Features</a></li>
+<li><a href="#sec-27">第二十七章：Loop</a></li>
+<li><a href="#sec-28">第二十八章：Pretty Printing</a></li>
+<li><a href="#sec-29">第二十九章：Common Lisp Object System</a></li>
+<li><a href="#sec-30">第三十章：Conditions</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">第一章：Preface</h2>
+<div class="outline-text-2" id="text-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">第二章：Introduction</h2>
+<div class="outline-text-2" id="text-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">第三章：Data Types</h2>
+<div class="outline-text-2" id="text-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">第四章：Scope and Extent</h2>
+<div class="outline-text-2" id="text-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">第五章：Type Specifiers</h2>
+<div class="outline-text-2" id="text-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">第六章：Program Structure</h2>
+<div class="outline-text-2" id="text-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7">第七章：Predicates</h2>
+<div class="outline-text-2" id="text-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8">第八章：Control Structure</h2>
+<div class="outline-text-2" id="text-8">
+
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9">第九章：Macros</h2>
+<div class="outline-text-2" id="text-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10">第十章：Declarations</h2>
+<div class="outline-text-2" id="text-10">
+
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11">第十一章：Symbols</h2>
+<div class="outline-text-2" id="text-11">
+
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12">第十二章：Packages</h2>
+<div class="outline-text-2" id="text-12">
+
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13">第十三章：Numbers</h2>
+<div class="outline-text-2" id="text-13">
+
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14">第十四章：Characters</h2>
+<div class="outline-text-2" id="text-14">
+
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15">第十五章：Sequences</h2>
+<div class="outline-text-2" id="text-15">
+
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16">第十六章：Lists</h2>
+<div class="outline-text-2" id="text-16">
+
+</div>
+
+</div>
+
+<div id="outline-container-17" class="outline-2">
+<h2 id="sec-17">第十七章：Hash Tables</h2>
+<div class="outline-text-2" id="text-17">
+
+</div>
+
+</div>
+
+<div id="outline-container-18" class="outline-2">
+<h2 id="sec-18">第十八章：Arrays</h2>
+<div class="outline-text-2" id="text-18">
+
+</div>
+
+</div>
+
+<div id="outline-container-19" class="outline-2">
+<h2 id="sec-19">第十九章：Strings</h2>
+<div class="outline-text-2" id="text-19">
+
+</div>
+
+</div>
+
+<div id="outline-container-20" class="outline-2">
+<h2 id="sec-20">第二十章：Structures</h2>
+<div class="outline-text-2" id="text-20">
+
+</div>
+
+</div>
+
+<div id="outline-container-21" class="outline-2">
+<h2 id="sec-21">第二十一章：The Evaluator</h2>
+<div class="outline-text-2" id="text-21">
+
+</div>
+
+</div>
+
+<div id="outline-container-22" class="outline-2">
+<h2 id="sec-22">第二十二章：Streams</h2>
+<div class="outline-text-2" id="text-22">
+
+</div>
+
+</div>
+
+<div id="outline-container-23" class="outline-2">
+<h2 id="sec-23">第二十三章：Input/Output</h2>
+<div class="outline-text-2" id="text-23">
+
+</div>
+
+</div>
+
+<div id="outline-container-24" class="outline-2">
+<h2 id="sec-24">第二十四章：File System Interface</h2>
+<div class="outline-text-2" id="text-24">
+
+</div>
+
+</div>
+
+<div id="outline-container-25" class="outline-2">
+<h2 id="sec-25">第二十五章：Errors</h2>
+<div class="outline-text-2" id="text-25">
+
+</div>
+
+</div>
+
+<div id="outline-container-26" class="outline-2">
+<h2 id="sec-26">第二十六章：Miscellanceous Features</h2>
+<div class="outline-text-2" id="text-26">
+
+</div>
+
+</div>
+
+<div id="outline-container-27" class="outline-2">
+<h2 id="sec-27">第二十七章：Loop</h2>
+<div class="outline-text-2" id="text-27">
+
+</div>
+
+</div>
+
+<div id="outline-container-28" class="outline-2">
+<h2 id="sec-28">第二十八章：Pretty Printing</h2>
+<div class="outline-text-2" id="text-28">
+
+</div>
+
+</div>
+
+<div id="outline-container-29" class="outline-2">
+<h2 id="sec-29">第二十九章：Common Lisp Object System</h2>
+<div class="outline-text-2" id="text-29">
+
+</div>
+
+</div>
+
+<div id="outline-container-30" class="outline-2">
+<h2 id="sec-30">第三十章：Conditions</h2>
+<div class="outline-text-2" id="text-30">
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">日期: 2013-08-14 06:45:20 PDT</p>
+<p class="author">作者: Leslie</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-* 学习资料和学习计划
+* 《ANSI Common Lisp》笔记
    
    ANSI Common Lisp 中文版: http://acl.readthedocs.org/en/latest/zhCN/index.html
 

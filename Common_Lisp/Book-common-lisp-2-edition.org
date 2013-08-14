@@ -1,0 +1,58 @@
+#+STARTUP: hideblocks
+#+STARTUP: nohideblocks
+#+OPTIONS: ^:{}
+
+#+OPTIONS: LaTeX:t         
+#+OPTIONS: LaTeX:dvipng    
+#+OPTIONS: LaTeX:nil       
+#+OPTIONS: LaTeX:verbatim  
+
+#+OPTIONS: H:8
+#+OPTIONS: toc:2
+#+OPTIONS: num:nil
+#+INFOJS_OPT: view:info toc:t mouse:underline up:./Book-common-lisp-2-edition.html home:http://lesliezhu.github.com
+
+
+##+LINK_UP: http://lesliezhu.github.com/Common_Lisp/index.html
+##+LINK_HOME: http://lesliezhu.github.com
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="http://lesliezhu.github.com/stylesheets/main.css" />
+#+LANGUAGE: zh-CN
+
+#+AUTHOR: Leslie
+#+EMAIL: pythonisland@gmail.com
+
+
+#+TITLE: 《Common Lisp: Second Edition》笔记
+
+
+* 第一章：Preface
+* 第二章：Introduction
+* 第三章：Data Types
+* 第四章：Scope and Extent
+* 第五章：Type Specifiers
+* 第六章：Program Structure
+* 第七章：Predicates
+* 第八章：Control Structure
+* 第九章：Macros
+* 第十章：Declarations
+* 第十一章：Symbols
+* 第十二章：Packages
+* 第十三章：Numbers
+* 第十四章：Characters
+* 第十五章：Sequences
+* 第十六章：Lists
+* 第十七章：Hash Tables
+* 第十八章：Arrays
+* 第十九章：Strings
+* 第二十章：Structures
+* 第二十一章：The Evaluator
+* 第二十二章：Streams
+* 第二十三章：Input/Output
+* 第二十四章：File System Interface
+* 第二十五章：Errors
+* 第二十六章：Miscellanceous Features
+* 第二十七章：Loop
+* 第二十八章：Pretty Printing
+* 第二十九章：Common Lisp Object System
+* 第三十章：Conditions

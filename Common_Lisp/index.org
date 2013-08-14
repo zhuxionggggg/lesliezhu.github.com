@@ -14,8 +14,9 @@
 #+OPTIONS: LaTeX:verbatim  
 
 #+OPTIONS: H:8
-#+OPTIONS: toc:3
-##+INFOJS_OPT: view:info toc:1
+#+OPTIONS: toc:2
+#+OPTIONS: num:nil
+##+INFOJS_OPT: view:info toc:t mouse:underline up:http://lesliezhu.github.com/Common_Lisp/index.html home:http://lesliezhu.github.com
 
 
 #+LINK_UP: http://lesliezhu.github.com/Common_Lisp/index.html
@@ -30,4 +31,8 @@
 
 #+TITLE: Common Lisp
 
-#+include: "./books-on-line.org"
+##+include: "./Book-common-lisp-2-edition.org"
+##+include: "./books-on-line.org"
+
+- [[./Book-common-lisp-2-edition.html][《Common Lisp(第二版)》笔记]]
+
