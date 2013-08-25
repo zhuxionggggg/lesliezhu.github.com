@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+<title>《高质量的C/C++》笔记</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="《高质量的C/C++》笔记"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-08-23 21:57:32 PDT"/>
+<meta name="author" content="Leslie"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../../stylesheets/main.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="http://lesliezhu.github.com/C_C++/index.html"> UP </a>
+ |
+ <a accesskey="H" href="http://lesliezhu.github.com"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">《高质量的C/C++》笔记</h1>
+
+
+
+
+
+
+
+
+
+
+
+<div id="table-of-contents">
+<h2>目录</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 第一章：文件结构</a>
+<ul>
+<li><a href="#sec-1-1">1.1 版权和版本声明</a></li>
+<li><a href="#sec-1-2">1.2 头文件的结构</a></li>
+<li><a href="#sec-1-3">1.3 定义文件的结构</a></li>
+<li><a href="#sec-1-4">1.4 头文件的作用</a></li>
+<li><a href="#sec-1-5">1.5 目录结构</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 第一章：文件结构</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+  程序分为头文件(.h)和定义文件(.c,.cpp)，前者保存声明，后者保存具体实现.
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 版权和版本声明</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+   版权和版本声明位于头文件和定义文件开头:
+</p><ul>
+<li>版权信息
+</li>
+<li>文件名称，标识符，摘要
+</li>
+<li>当前版本号，作者/修改者，完成日期
+</li>
+<li>版本历史信息
+</li>
+</ul>
+
+
+<p>
+   如:
+</p>
+
+
+<pre class="src src-cpp"><span style="color: #ff0000;">/*</span>
+<span style="color: #ff0000;">* Copyright (c) 2013, Leslie Zhu</span>
+<span style="color: #ff0000;">* All rights reserved.</span>
+<span style="color: #ff0000;">*</span>
+<span style="color: #ff0000;">* &#25991;&#20214;&#21517;&#31216;: filename.h</span>
+<span style="color: #ff0000;">* &#25991;&#20214;&#26631;&#35782;: &#26576;&#26576;&#27169;&#22359;&#26576;&#26576;&#21151;&#33021;</span>
+<span style="color: #ff0000;">* &#25688;&#35201;: &#31616;&#35201;&#25551;&#36848;&#26412;&#25991;&#20214;&#30340;&#20869;&#23481;</span>
+<span style="color: #ff0000;">*</span>
+<span style="color: #ff0000;">* &#24403;&#21069;&#29256;&#26412;: 1.0</span>
+<span style="color: #ff0000;">* &#20316;&#32773;&#65306; </span>
+<span style="color: #ff0000;">* &#23436;&#25104;&#26085;&#26399;&#65306; dd/mm/yyyy</span>
+<span style="color: #ff0000;">*</span>
+<span style="color: #ff0000;">* &#21462;&#20195;&#29256;&#26412;: 0.9</span>
+<span style="color: #ff0000;">* &#21407;&#20316;&#32773;: </span>
+<span style="color: #ff0000;">* &#23436;&#25104;&#26085;&#26399;: dd/mm/yyyy</span>
+<span style="color: #ff0000;">*/</span>
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 头文件的结构</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+   头文件由三部分内容组成:
+</p><ul>
+<li>版权和版本声明
+</li>
+<li>预处理块
+</li>
+<li>函数和泪结构声明等
+</li>
+</ul>
+
+
+<p>
+   <b>规则1</b> ： 防止头文件重复引用，用ifndef/define/endif预处理
+</p>
+<p>
+   <b>规则2</b> ： 用#include &lt;filename.h&gt; 来引用标准库文件
+</p>
+<p>
+   <b>规则3</b> ： 用#include "filename.h" 来引用非标准库文件
+</p>
+<p>
+   <b>规则4</b> ： 头文件中只存放“声明”而不存放“定义”
+</p>
+<p>
+   <b>规则5</b> ： 尽量不要头文件中出现全局变量
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 定义文件的结构</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+<p>   
+   定义文件分为三部分:
+</p><ul>
+<li>版权和版本声明
+</li>
+<li>对一些头文件的引用
+</li>
+<li>程序的实现体（包括数据和代码)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> 头文件的作用</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+<ol>
+<li>通过头文件调用库功能。不便提供源码情况下，只需要提供头文件和二进制的库即可。
+</li>
+<li>头文件能加强类型安全检查。
+</li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> 目录结构</h3>
+<div class="outline-text-3" id="text-1-5">
+
+
+<p>
+   如果一个软件的头文件数据比较多（超过10个），通常应该将头文件和定义文件分别保存到
+   不同的目录，以便于维护。
+</p>
+<p>
+   如果某些头文件是私有的，不会被用户直接引用，则没有必要公开“声明”，将其放到定义文件目录。
+</p>
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">日期: 2013-08-23 21:57:32 PDT</p>
+<p class="author">作者: Leslie</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

@@ -21,15 +21,15 @@
 #+LINK_UP: http://lesliezhu.github.com/C_C++/index.html
 #+LINK_HOME: http://lesliezhu.github.com
 
-#+STYLE: <link rel="stylesheet" type="text/css" href="../stylesheets/main.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="../../stylesheets/main.css" />
 #+LANGUAGE: zh-CN
 
 #+AUTHOR: Leslie
 #+EMAIL: pythonisland@gmail.com
 
 
-#+TITLE: C/C++
+#+TITLE: 《高质量的C/C++》笔记
 
-[[./GoodCCC/index.html][《高质量的C/C++》笔记]]
+#+include: "./001-文件结构.org"
 
 
