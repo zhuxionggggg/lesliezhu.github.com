@@ -1,0 +1,47 @@
+#+STARTUP: overview
+#+STARTUP: content
+#+STARTUP: indent
+
+#+STARTUP: hideblocks
+#+STARTUP: nohideblocks
+#+OPTIONS: ^:{}
+
+#+OPTIONS: LaTeX:t         
+#+OPTIONS: LaTeX:dvipng    
+#+OPTIONS: LaTeX:nil       
+#+OPTIONS: LaTeX:verbatim  
+
+#+OPTIONS: H:8
+#+OPTIONS: toc:3
+#+OPTIONS: num:nil
+#+INFOJS_OPT: view:info toc:1
+
+
+#+LINK_UP: http://lesliezhu.github.com/Gold/index.html
+#+LINK_HOME: http://lesliezhu.github.com
+
+#+STYLE: <link rel="stylesheet" type="text/css" href="../stylesheets/main.css" />
+#+LANGUAGE: zh-CN
+
+#+AUTHOR: Leslie
+#+EMAIL: pythonisland@gmail.com
+
+
+#+TITLE: 孰不可忍
+
+#+include: "./00-preface.org"
+
+#+begin_html
+<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lesliezhu"};
+(function() {
+var ds = document.createElement('script');
+ds.type = 'text/javascript';ds.async = true;
+ds.src = 'http://static.duoshuo.com/embed.js';
+ds.charset = 'UTF-8';
+(document.getElementsByTagName('head')[0] 
+|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+#+end_html
